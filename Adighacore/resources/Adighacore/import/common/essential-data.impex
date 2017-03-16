@@ -21,7 +21,7 @@
 # * User Groups
 # * DistanceUnits for Storelocator
 # * MediaFolders
-# * MediaFormats                               s
+# * MediaFormats 
 # * Tax & Tax Groups
 # * Jobs
 #% impex.setLocale(Locale.GERMAN);
@@ -29,16 +29,10 @@
 # Languages
 INSERT_UPDATE Language;isocode[unique=true];fallbackLanguages(isocode);active[default=true]
 ;en;;;
-;de;en;;
-;ja;en;;
-;zh;en;;
 
 # Currencies
 INSERT_UPDATE Currency;isocode[unique=true];conversion;digits;symbol
-;GBP;1;2;£
-;EUR;1;2;€
-;USD;1,4;2;$
-;JPY;120;0;¥
+;INR;1;0;₹
 
 # Vendor
 INSERT_UPDATE Vendor;code[unique=true];name
@@ -79,27 +73,14 @@ INSERT_UPDATE MediaFormat;qualifier[unique=true]
 
 # Tax & Tax Groups
 INSERT_UPDATE UserTaxGroup;code[unique=true]
-;de-taxes
-;jp-taxes
-;uk-taxes
-;us-taxes
-;ca-taxes
+;in-taxes
 
 INSERT_UPDATE ProductTaxGroup;code[unique=true]
-;jp-vat-full
-;eu-vat-full
-;eu-vat-half
-;us-sales-tax-full
-;ca-sales-tax-full
+;in-sales-tax-full
 
 INSERT_UPDATE Tax;code[unique=true];value;currency(isocode)
-;de-vat-full;19
-;de-vat-half;7
-;jp-vat-full;5
-;uk-vat-full;20
-;uk-vat-half;5
-;us-sales-tax-full;0
-;ca-sales-tax-full;0
+;in-vat-full;19
+;in-vat-half;7
 
 INSERT_UPDATE ServicelayerJob;code[unique=true];springId[unique=true]
 ;cartRemovalJob;cartRemovalJob

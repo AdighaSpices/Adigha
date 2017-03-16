@@ -18,17 +18,11 @@ $lang=en
 
 # Languages
 UPDATE Language;isocode[unique=true];name[lang=$lang]
- ;de;"German"
  ;en;"English"
- ;ja;"Japanese"
- ;zh;"Chinese"
 
 # Currencies
 UPDATE Currency;isocode[unique=true];name[lang=$lang]
- ;EUR;"Euro"
- ;GBP;"Pound"
- ;JPY;"Japanese Yen"
- ;USD;"US Dollar"
+ ;INR;"Rupee"
 
 # Titles
 UPDATE Title;code[unique=true];name[lang=$lang]
@@ -66,29 +60,16 @@ UPDATE MediaFormat;qualifier[unique=true];name[lang=$lang];
 
 # Product Tax Groups
 UPDATE ProductTaxGroup;code[unique=true];name[lang=$lang]
- ;ca-sales-tax-full;"CA Sales Tax"
- ;eu-vat-full;"EU Full Tax rate"
- ;eu-vat-half;"EU Half Tax rate"
- ;jp-vat-full;"JP Consumption Tax"
- ;us-sales-tax-full;"US Sales Tax"
+ ;in-sales-tax-full;"IND Sales Tax"
 
 # User Tax Groups
 UPDATE UserTaxGroup;code[unique=true];name[lang=$lang]
- ;ca-taxes;"CA Taxes"
- ;de-taxes;"DE Taxes"
- ;jp-taxes;"JP Taxes"
- ;uk-taxes;"UK Taxes"
- ;us-taxes;"US Taxes"
+ ;in-taxes;"IND Taxes"
 
 # Tax
 UPDATE Tax;code[unique=true];name[lang=$lang]
- ;ca-sales-tax-full;"Sales Tax"
- ;de-vat-full;"DE VAT full"
- ;de-vat-half;"DE VAT half"
- ;jp-vat-full;"Consumption Tax"
- ;uk-vat-full;"UK VAT full"
- ;uk-vat-half;"UK VAT half"
- ;us-sales-tax-full;"Sales Tax"
+;in-vat-full;"IND Full Tax"
+;in-vat-half;"IND Full Tax"
 
 # Consginment statuses
 UPDATE ConsignmentStatus;code[unique=true];name[lang=$lang]
