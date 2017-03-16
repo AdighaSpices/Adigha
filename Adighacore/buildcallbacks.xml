@@ -87,22 +87,17 @@
 
 	<macrodef name="Adighacore_after_dist_copy">
 		<sequential>
-			<if>
-				<available file="${ext.Adighacore.path}/../recipes/" type="dir"/>
-				<then>
-					<copy preservelastmodified="true" todir="${destination.folder}/../installer/recipes">
-						<fileset dir="${ext.Adighacore.path}/../recipes/"/>
-					</copy>
-					<if>
-						<istrue value="${dist.development.dist}"/>
-						<then>
-							<copy preservelastmodified="true" todir="${destination.develop.folder}/../installer/recipes">
-								<fileset dir="${ext.Adighacore.path}/../recipes/"/>
-							</copy>
-						</then>
-					</if>
-				</then>
-			</if>
+			<copy preservelastmodified="true" todir="${destination.folder}/../installer/recipes">
+							<fileset dir="${ext.Adighacore.path}/../recipes/"/>
+						</copy>
+						<if>
+							<istrue value="${dist.development.dist}"/>
+							<then>
+								<copy preservelastmodified="true" todir="${destination.develop.folder}/../installer/recipes">
+									<fileset dir="${ext.Adighacore.path}/../recipes/"/>
+								</copy>
+							</then>
+						</if>
 		</sequential>
 	</macrodef>
 	

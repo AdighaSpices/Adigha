@@ -23,54 +23,14 @@
      <context:annotation-config/> 
 
 	<!-- Spring Integration -->
-	<import resource="classpath:/Adighacore/integration/hot-folder-store-electronics-spring.xml"/>
-	<import resource="classpath:/Adighacore/integration/hot-folder-store-apparel-spring.xml"/>
 	<import resource="classpath:/Adighacore/integration/hot-folder-common-spring.xml"/>
 
 	<!-- SystemSetup for the AdighaCore -->
-	<bean id="acceleratorCoreSystemSetup" class="com.india.adigha.core.setup.CoreSystemSetup"
+	<bean id="adighaCoreSystemSetup" class="com.boeing.rmas.core.setup.CoreSystemSetup"
 	       parent="abstractCoreSystemSetup"/>
 
 	<!-- Solr field value providers -->
 	
-	<bean id="volumeAwareProductPriceValueProvider" class="com.india.adigha.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
-        <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
-        <property name="priceService" ref="priceService"/>
-        <property name="commonI18NService" ref="commonI18NService"/>
-        <property name="sessionService" ref="sessionService"/>
-        <property name="userService" ref="userService"/>
-        <property name="priceComparator" ref="volumePriceComparator"/>
-        <property name="catalogVersionService" ref="catalogVersionService"/>
-    </bean>
-
-    <bean id="volumePriceComparator" class="com.india.adigha.core.comparators.VolumeAwarePriceInformationComparator" scope="singleton"/>
-
-    <bean id="productVolumePricesProvider" class="com.india.adigha.core.search.solrfacetsearch.provider.impl.ProductVolumePricesProvider"  parent="abstractPropertyFieldValueProvider">
-        <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
-        <property name="priceService" ref="priceService"/>
-    </bean>
-	
-
-	<bean id="electronicsCategorySource" parent="abstractCategorySource">
-		<property name="rootCategory" value="1"/>
-		<!-- '1' is the root icecat category -->
-	</bean>
-	<bean id="electronicsBrandCategorySource" parent="abstractCategorySource">
-		<property name="rootCategory" value="brands"/>
-		<!-- 'brands' is the root of the brands hierarchy -->
-	</bean>
-
-	<bean id="apparelCategorySource" parent="abstractCategorySource">
-		<property name="rootCategory" value="categories"/>
-		<!-- 'categories' is the root apparel category -->
-	</bean>
-	<bean id="apparelBrandCategorySource" parent="abstractCategorySource">
-		<property name="rootCategory" value="brands"/>
-		<!-- 'brands' is the root of the brands hierarchy -->
-	</bean>
-	<bean id="apparelCollectionCategorySource" parent="abstractCategorySource">
-		<property name="rootCategory" value="collections"/> <!-- 'collections' is the root of the collections hierarchy -->
-	</bean>
 
 	<bean id="abstractCategoryCodeValueProvider" abstract="true"
 	      class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryCodeValueProvider"
@@ -85,37 +45,6 @@
 		<property name="commonI18NService" ref="commonI18NService"/>
 	</bean>
 
-	<bean id="electronicsCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
-		<property name="categorySource" ref="electronicsCategorySource"/>
-	</bean>
-	<bean id="electronicsBrandCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
-		<property name="categorySource" ref="electronicsBrandCategorySource"/>
-	</bean>
-	<bean id="electronicsCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
-		<property name="categorySource" ref="electronicsCategorySource"/>
-	</bean>
-	<bean id="electronicsBrandCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
-		<property name="categorySource" ref="electronicsBrandCategorySource"/>
-	</bean>
-
-	<bean id="apparelCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
-		<property name="categorySource" ref="apparelCategorySource"/>
-	</bean>
-	<bean id="apparelBrandCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
-		<property name="categorySource" ref="apparelBrandCategorySource"/>
-	</bean>
-	<bean id="apparelCollectionCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
-		<property name="categorySource" ref="apparelCollectionCategorySource"/>
-	</bean>
-	<bean id="apparelCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
-		<property name="categorySource" ref="apparelCategorySource"/>
-	</bean>
-	<bean id="apparelBrandCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
-		<property name="categorySource" ref="apparelBrandCategorySource"/>
-	</bean>
-	<bean id="apparelCollectionCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
-		<property name="categorySource" ref="apparelCollectionCategorySource"/>
-	</bean>
 
 	<bean id="image515ValueProvider" parent="abstractImageValueProvider" >
 		<property name="mediaFormat" value="515Wx515H"/>
@@ -156,109 +85,6 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
-	<bean id="colorFacetValueProvider"
-	      class="com.india.adigha.core.search.solrfacetsearch.provider.impl.ColorFacetValueProvider"
-	       parent="abstractPropertyFieldValueProvider">
-		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
-	</bean>
-
-	<bean id="colorFacetDisplayNameProvider"
-	      class="com.india.adigha.core.search.solrfacetsearch.provider.impl.ColorFacetDisplayNameProvider"
-	      >
-		<property name="enumerationService" ref="enumerationService"/>
-		<property name="i18nService" ref="i18nService"/>
-		<property name="commonI18NService" ref="commonI18NService"/>
-	</bean>
-	
-	<bean id="apparelPointOfServiceFacetDisplayNameProvider"
-	      class="com.india.adigha.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
-	      >
-		<property name="pointOfServiceService" ref="pointOfServiceService"/>
-	</bean>
-	
-	<bean id="electronicsPointOfServiceFacetDisplayNameProvider"
-	      class="com.india.adigha.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
-	      >
-		<property name="pointOfServiceService" ref="pointOfServiceService"/>
-	</bean>
-
-	<bean id="genderValueProvider"
-	      class="com.india.adigha.core.search.solrfacetsearch.provider.impl.GenderValueProvider"
-	       parent="abstractPropertyFieldValueProvider">
-		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
-	</bean>
-
-	<bean id="genderFacetDisplayNameProvider"
-	      class="com.india.adigha.core.search.solrfacetsearch.provider.impl.GenderFacetDisplayNameProvider"
-	      >
-		<property name="enumerationService" ref="enumerationService"/>
-		<property name="i18nService" ref="i18nService"/>
-		<property name="commonI18NService" ref="commonI18NService"/>
-	</bean>
-
-	<!--
-		Event listeners are singletons, therefore the dependency for a bean in tenant-scope
-		must be configured with a lookup method.
-	-->
-	<bean id="orderCancelledEventListener"
-	      class="com.india.adigha.core.event.OrderCancelledEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="orderRefundEventListener"
-	      class="com.india.adigha.core.event.OrderRefundEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="customerRegistrationEventListener"
-	      class="com.india.adigha.core.event.RegistrationEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="forgottenPasswordEventListener"
-	      class="com.india.adigha.core.event.ForgottenPasswordEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="submitOrderEventListener" class="com.india.adigha.core.event.SubmitOrderEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="businessProcessService" ref="businessProcessService"/>
-		<property name="modelService" ref="modelService"/>
-		<property name="baseStoreService" ref="baseStoreService"/>
-	</bean>
-	<bean id="orderConfirmationEventListener"
-	      class="com.india.adigha.core.event.OrderConfirmationEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="sendDeliveryMessageEventListener"
-	      class="com.india.adigha.core.event.SendDeliveryMessageEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="sendReadyForPickupMessageEventListener"
-	      class="com.india.adigha.core.event.SendReadyForPickupMessageEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="sendOrderPartiallyCanceledMessageEventListener"
-	      class="com.india.adigha.core.event.SendOrderPartiallyCanceledMessageEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="sendOrderPartiallyRefundedMessageEventListener"
-	      class="com.india.adigha.core.event.SendOrderPartiallyRefundedMessageEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="sendNotPickedUpConsignmentCanceledMessageEventListener"
-	      class="com.india.adigha.core.event.SendNotPickedUpConsignmentCanceledMessageEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
-	<bean id="orderCompletedEventListener" class="com.india.adigha.core.event.OrderCompletedEventListener" parent="abstractAcceleratorSiteEventListener">
-		<property name="modelService" ref="modelService"/>
-		<property name="businessProcessService" ref="businessProcessService"/>
-	</bean>
 
 	<!-- Process resources definition -->
 
@@ -368,17 +194,6 @@
 	</bean>
 
 	<!-- Simple Suggestion Service -->
-	<alias alias="simpleSuggestionService" name="defaultSimpleSuggestionService"/>
-	<bean id="defaultSimpleSuggestionService"
-	      class="com.india.adigha.core.suggestion.impl.DefaultSimpleSuggestionService" >
-		<property name="simpleSuggestionDao" ref="simpleSuggestionDao"/>
-	</bean>
-	<alias alias="simpleSuggestionDao" name="defaultSimpleSuggestionDao"/>
-	<bean id="defaultSimpleSuggestionDao"
-	      class="com.india.adigha.core.suggestion.dao.impl.DefaultSimpleSuggestionDao"
-	      parent="abstractItemDao" >
-		<property name="flexibleSearchService" ref="flexibleSearchService"/>
-	</bean>
 
 	<bean id="mccSiteUrlHelper" class="com.india.adigha.core.util.MccSiteUrlHelper" >
 		<property name="siteChannelValidationStrategy" ref="siteChannelValidationStrategy"/>
@@ -386,55 +201,4 @@
 		<property name="cmsSiteService" ref="cmsSiteService"/>
 	</bean>
 
-
-	<!-- checkout flow configuration -->
-	
-	<bean id="pickUpInStoreCheckoutFlowStrategy" class="com.india.adigha.core.checkout.flow.impl.PickUpInStoreCheckoutFlowStrategy" >
-		<property name="pickupStrategy" ref="pickupStrategy" />
-		<property name="defaultStrategy" ref="siteCheckoutFlowStrategy"/>
-		<property name="multiStepCheckoutFlowStrategy" ref="multiStepCheckoutFlowStrategy" />
-	</bean>	
-
-	<bean id="siteCheckoutFlowStrategy"
-	      class="com.india.adigha.core.checkout.flow.impl.SiteCheckoutFlowStrategy" >
-		<!-- This strategy looks up a strategy based on the current site UID -->
-		<property name="cmsSiteService" ref="cmsSiteService"/>
-		<property name="siteMappings">
-			<map>
-				<entry key="electronics" value-ref="newCustomerCheckoutFlowStrategy"/>
-				<entry key="apparel-de" value-ref="multiStepCheckoutFlowStrategy"/>
-				<entry key="apparel-uk" value-ref="multiStepCheckoutFlowStrategy"/>
-				<entry key="powertoolsstore" value-ref="multiStepCheckoutFlowStrategy"/>
-			</map>
-		</property>
-		<!-- Default to SINGLE step checkout -->
-		<property name="defaultStrategy" ref="multiStepCheckoutFlowStrategy"/>
-	</bean>
-
-	<bean id="newCustomerCheckoutFlowStrategy"
-	      class="com.india.adigha.core.checkout.flow.impl.NewCustomerCheckoutFlowStrategy" >
-		<!-- This strategy works out if the user has created any data -->
-		<property name="userService" ref="userService"/>
-		<property name="customerAccountService" ref="customerAccountService"/>
-		<property name="defaultStrategy" ref="multiStepCheckoutFlowStrategy"/>
-		<property name="newCustomerStrategy" ref="multiStepCheckoutFlowStrategy"/>
-	</bean>
-
-	<!-- Product Reference Lookup Strategies-->
-	<alias name="apparelCrossSellingProductReferenceTargetStrategy" alias="crossSellingProductReferenceTargetStrategy"/>
-	<bean id="apparelCrossSellingProductReferenceTargetStrategy"
-	      parent="defaultCrossSellingProductReferenceTargetStrategy">
-		<property name="productReferenceTargetStrategies">
-			<list merge="true">
-				<ref bean="apparelSizeProductReferenceTargetStrategy"/>
-			</list>
-		</property>
-	</bean>
-
-	<bean id="apparelSizeProductReferenceTargetStrategy"
-	      class="com.india.adigha.core.strategies.impl.ApparelSizeProductReferenceTargetStrategy">
-		<property name="commerceCategoryService" ref="commerceCategoryService"/>
-		<property name="rootCategoryCode" value="categories"/>
-	</bean>
-	
 </beans>
