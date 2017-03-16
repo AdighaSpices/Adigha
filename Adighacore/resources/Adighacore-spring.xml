@@ -26,7 +26,7 @@
 	<import resource="classpath:/Adighacore/integration/hot-folder-common-spring.xml"/>
 
 	<!-- SystemSetup for the AdighaCore -->
-	<bean id="adighaCoreSystemSetup" class="com.boeing.rmas.core.setup.CoreSystemSetup"
+	<bean id="adighaCoreSystemSetup" class="com.india.adigha.core.setup.CoreSystemSetup"
 	       parent="abstractCoreSystemSetup"/>
 
 	<!-- Solr field value providers -->

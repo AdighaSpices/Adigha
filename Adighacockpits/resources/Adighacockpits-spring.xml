@@ -25,7 +25,7 @@
         
     <context:annotation-config/>
 
-	<bean id="yAcceleratorCockpitsSystemSetup" class="com.india.adigha.cockpits.setup.CockpitSystemSetup"  parent="abstractCoreSystemSetup"/>
+	<bean id="adighaCockpitsSystemSetup" class="com.india.adigha.cockpits.setup.CockpitSystemSetup"  parent="abstractCoreSystemSetup"/>
 
 	<alias alias="AdighacockpitsLabelLocator" name="defaultYacceleratorcockpitsLabelLocator" />
 	<bean id="defaultYacceleratorcockpitsLabelLocator" class="de.hybris.platform.cockpit.util.ConfigurableCockpitLabelLocator" scope="singleton" lazy-init="false">
