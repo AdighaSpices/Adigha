@@ -16,7 +16,6 @@
 		<!-- you should add all required extensions to this list, except platform 
 			extensions which are automatically required -->
 		<requires-extension name="acceleratorcms"/>
-		<requires-extension name="solrserver"/>
 
 		<coremodule generated="true" manager="com.india.adigha.core.jalo.AdighaCoreManager" packageroot="com.india.adigha.core"/>
 
