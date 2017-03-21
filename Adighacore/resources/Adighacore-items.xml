@@ -14,5 +14,72 @@
 
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
 
-
+	<itemtypes>
+		<itemtype code="AdighaProduct" extends="Product"
+						autocreate="true" generate="true" jaloclass="com.india.adigha.core.jalo.AdighaProduct">
+					<description>Base Adigha product extension.</description>
+					<attributes>
+							<attribute qualifier="recipe" type="AdighaRecipe">
+								<description>The type of the adigha product.</description>
+								<modifiers read="true" write="true" search="true" optional="true" />
+								<persistence type="property" />
+							</attribute>
+							<attribute qualifier="isTodaySpecial" type="java.lang.Boolean">
+								<description>The type of the adigha product.</description>
+								<modifiers read="true" write="true" search="true" optional="true" />
+								<persistence type="property" />
+							</attribute>
+					</attributes>
+		</itemtype>
+		
+			<itemtype code="AdighaVariantProduct" extends="VariantProduct"
+					autocreate="true" generate="true" jaloclass="com.boeing.rmas.core.jalo.AdighaVariantProduct">
+				<description>Base Adigha variant product extension.</description>
+				<attributes>
+					<attribute qualifier="type" type="java.lang.String">
+						<description>type of variants for the product</description>
+						<modifiers read="true" write="true" search="true" optional="true"/>
+						<persistence type="property"/>
+					</attribute>
+					<attribute qualifier="size" type="java.lang.String">
+						<description>Size of variants for the product</description>
+						<modifiers read="true" write="true" search="true" optional="true"/>
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
+			</itemtype>
+			
+			<itemtype code="AdighaRecipe" extends="GenericItem" autocreate="true" generate="true" jaloclass="com.india.adigha.core.jalo.media.AdighaRecipe">
+			<deployment table="AdighaRecipe" typecode="30500"/>
+			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<description>recipe unique identifier.</description>
+					<modifiers write="true" read="true" search="true" unique="true" optional="false"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="name" type="java.lang.String">
+					<description>name of the recipe</description>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="description" type="java.lang.String">
+					<description>description of recipe</description>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="media" type="Media">
+					<description>store the attachment as a media</description>
+					<modifiers read="true" write="true" search="true" optional="true"/>
+					<persistence type="property"/>
+				</attribute>
+				
+			</attributes>
+				<indexes>
+					<index name="adighaRecipe_code">
+						<key attribute="code"/>
+					</index>
+				</indexes>
+		
+		</itemtype>
+	</itemtypes>
 </items>
