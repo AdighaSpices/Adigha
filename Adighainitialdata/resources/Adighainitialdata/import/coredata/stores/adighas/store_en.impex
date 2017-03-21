@@ -1,0 +1,13 @@
+#
+# Import the RMAS Store(s)
+#
+
+# Language
+$lang=en
+
+# Stores
+$storeUid=adighas
+
+# Update Base Store Name
+UPDATE BaseStore;uid[unique=true];name[lang=$lang]
+;$storeUid;"Adighas Store"

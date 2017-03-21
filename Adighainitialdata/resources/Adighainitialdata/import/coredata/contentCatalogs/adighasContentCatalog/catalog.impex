@@ -1,0 +1,21 @@
+#
+# Import the Adighas Content Catalog
+#
+
+$contentCatalog=adighasContentCatalog
+$languages=en
+$sourceContentCV=sourceVersion(catalog(id[default=$contentCatalog]),version[default='Staged'])[unique=true,default='$contentCatalog:Staged']
+$targetContentCV=targetVersion(catalog(id[default=$contentCatalog]),version[default='Online'])[unique=true,default='$contentCatalog:Online']
+
+# Content catalog for CMS contents
+INSERT_UPDATE ContentCatalog;id[unique=true]
+;$contentCatalog
+
+# Catalog versions for content catalogs
+INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];active;languages(isoCode)
+;$contentCatalog;Staged;false;$languages
+;$contentCatalog;Online;true;$languages
+
+UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];writePrincipals(uid);
+;$contentCatalog;Online;cmsmanagergroup;
+;$contentCatalog;Staged;cmsmanagergroup;
