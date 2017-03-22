@@ -5,7 +5,7 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<template:page pageTitle="${pageTitle}" bannerCssClass="banner-homepage">
+<template:page pageTitle="${pageTitle}">
 	<cms:pageSlot position="HomeSection" var="feature">
 		<cms:component component="${feature}" />
 	</cms:pageSlot>
