@@ -19,3 +19,6 @@ INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];activ
 UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];writePrincipals(uid);
 ;$contentCatalog;Online;cmsmanagergroup;
 ;$contentCatalog;Staged;cmsmanagergroup;
+
+#INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];$sourceContentCV;$targetContentCV;
+#;sync contentCatalog:Staged->Online;;;;
