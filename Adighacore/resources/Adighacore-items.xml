@@ -81,5 +81,9 @@
 				</indexes>
 		
 		</itemtype>
+		<typegroup name="Components">
+			<itemtype code="AdighasImageBannerComponent" autocreate="true" generate="true" extends="BannerComponent">
+			</itemtype>
+		</typegroup>
 	</itemtypes>
 </items>

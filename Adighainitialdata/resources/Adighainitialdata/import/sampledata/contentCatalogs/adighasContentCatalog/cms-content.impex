@@ -3,14 +3,15 @@
 #
 $contentCatalog=adighasContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$siteResource=jar:com.india.adigha.initialdata.constants.AdighaInitialDataConstants&/Adighainitialdata/import/sampledata/contentCatalogs/$contentCatalog
 $lang=en
 
 #### SiteTerms Page slots ####
-INSERT_UPDATE CMSTabParagraphComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang];content[lang=$lang];
-;;HomepageParagraphComponent;Homepage;"Hello World....";
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+;;logo;image/png;adighasLogo.png;$siteResource/images/Adighas.png
+
+INSERT_UPDATE AdighasImageBannerComponent;$contentCV[unique=true];uid[unique=true];media(code,$contentCV);headline[lang=$lang];
+;;adighsLogo;logo;;
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
-;;HomeSectionSlot;Default HomePage Slot;true;HomepageParagraphComponent
-
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='adighashomepage']; contentSlot(uid,$contentCV)[unique=true]
-;;HomeSectionPage;HomeSection;;HomeSectionSlot
+;;SiteLogoSlot;SiteLogo;true;adighsLogo
