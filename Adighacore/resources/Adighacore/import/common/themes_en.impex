@@ -22,3 +22,4 @@ UPDATE SiteTheme;code[unique=true];name[lang=$lang]
  ;black;"Black"
  ;blue;"Blue"
  ;lambda;"Lambda"
+ ;Adighas;"Adighas"

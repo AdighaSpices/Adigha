@@ -4,7 +4,7 @@
 <c:url value="${not empty page ? page.label : urlLink}" var="encodedUrl" />
 
 <div class="col-md-6">
-	<div class="header-logo">
+	<div id="logo" class="grid_4 alpha">
 		<c:choose>
 			<c:when test="${empty encodedUrl || encodedUrl eq '#'}">
 				<img title="${media.altText}" alt="${media.altText}"
