@@ -23,7 +23,8 @@
      <context:annotation-config/> 
 
 	<!-- Spring Integration -->
-	<import resource="classpath:/Adighacore/integration/hot-folder-common-spring.xml"/>
+	<!-- <import resource="classpath:/Adighacore/integration/hot-folder-common-spring.xml"/> -->
+	<import resource="classpath:/Adighacore/integration/adighas-hot-folder-spring.xml"/>
 
 	<!-- SystemSetup for the AdighaCore -->
 	<bean id="adighaCoreSystemSetup" class="com.india.adigha.core.setup.CoreSystemSetup"

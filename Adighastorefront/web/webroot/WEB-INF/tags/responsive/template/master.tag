@@ -18,7 +18,7 @@
 <html lang="${currentLanguage.isocode}">
 <head>
 	<title>
-		${not empty pageTitle ? pageTitle : not empty cmsPage.title ? cmsPage.title : 'Accelerator Title'}
+		${not empty pageTitle ? pageTitle : not empty cmsPage.title ? cmsPage.title : 'Adighas Title'}
 	</title>
 	
 	<%-- Meta Content --%>
@@ -32,7 +32,7 @@
 
 	<%-- Favourite Icon --%>
 	<spring:theme code="img.favIcon" text="/" var="favIconPath"/>
-    <link rel="shortcut icon" type="image/x-icon" media="all" href="${originalContextPath}${favIconPath}" />
+    <link rel="icon" media="all" href="${originalContextPath}${favIconPath}" />
 
 	<%-- CSS Files Are Loaded First as they can be downloaded in parallel --%>
 	<template:styleSheets/>

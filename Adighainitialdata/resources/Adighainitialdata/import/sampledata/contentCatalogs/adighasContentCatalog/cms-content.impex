@@ -9,9 +9,25 @@ $lang=en
 #### SiteTerms Page slots ####
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
 ;;logo;image/png;adighasLogo.png;$siteResource/images/Adighas.png
+;;rotateImage1;image/png;cb.png;$siteResource/images/cb.png
+;;rotateImage2;image/png;Fruit-des.png;$siteResource/images/Fruit-des.png
 
 INSERT_UPDATE AdighasImageBannerComponent;$contentCV[unique=true];uid[unique=true];media(code,$contentCV);headline[lang=$lang];
 ;;adighsLogo;logo;;
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
 ;;SiteLogoSlot;SiteLogo;true;adighsLogo
+
+
+INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];media(code,$contentCV);headline[lang=$lang];
+;;homeRotateBannerImage1;rotateImage1;;
+;;homeRotateBannerImage2;rotateImage2;;
+
+INSERT_UPDATE AdighasRotatingImagesComponent;$contentCV[unique=true];uid[unique=true];effect(code);banners(uid,$contentCV);timeout
+;;homeRotatingImage;;homeRotateBannerImage1,homeRotateBannerImage2;5
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
+;;Section1Slot-HomePage;rotate Image slot;true;homeRotatingImage
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='adighashomepage']; contentSlot(uid,$contentCV)[unique=true]
+;;Section1-HomePage;Section1;;Section1Slot-HomePage

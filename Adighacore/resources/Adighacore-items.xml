@@ -84,6 +84,7 @@
 		<typegroup name="Components">
 			<itemtype code="AdighasImageBannerComponent" autocreate="true" generate="true" extends="BannerComponent">
 			</itemtype>
+			<itemtype code="AdighasRotatingImagesComponent" autocreate="true" generate="true" extends="RotatingImagesComponent"/>
 		</typegroup>
 	</itemtypes>
 </items>
