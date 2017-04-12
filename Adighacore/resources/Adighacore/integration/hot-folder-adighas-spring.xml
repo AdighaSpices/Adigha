@@ -33,6 +33,17 @@
         <property name="timeStampFormat" value="yyyyMMddHHmmssSSS" />
     </bean>
  
+ 	 <bean id="fileOrderComparator" class="de.hybris.platform.acceleratorservices.dataimport.batch.FileOrderComparator">
+        <property name="prefixPriority">
+            <map>
+                <!-- default priority is 0 -->
+                <entry key="internal_base_category" value="0"/>
+                <entry key="internal_base_product" value="2" />
+                <entry key="internal_base_recipe" value="1"/>
+            </map>
+        </property>
+    </bean>
+    
  	<!-- 1) Base Directory -->
     <bean id="baseDirectoryHybris" class="java.lang.String">
         <constructor-arg value="#{configurationService.configuration.getProperty('adighas.batch.impex.basefolder')}/${tenantId}/hybris" />
@@ -123,6 +134,10 @@
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
           p:mapping="internal_base_recipe"
           p:converter-ref="batchInternalRecipeConverter"/>
+   <bean id="batchInternalProductConverterMapping"
+          class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+          p:mapping="internal_base_product"
+          p:converter-ref="batchInternalProductConverter"/>
  
     <!-- impex converters -->
     <!-- product import -->
@@ -161,5 +176,18 @@
             <value>;{+0};{1};{2};</value>
         </property>
         <property name="type" value="AdighaRecipe"/>
+    </bean>
+    
+    <bean id="batchInternalProductConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+        <property name="header">
+            <value>#{defaultImpexCategoryHeader}
+                ## products
+                INSERT_UPDATE $TYPE$;code[unique=true];name;description;$catalogVersion;recipe(code);approvalStatus(code);supercategories(code, $catalogVersion);isTodaySpecial[default='false']
+            </value>
+        </property>
+        <property name="impexRow">
+            <value>;{+0};{1};{2};{3};{4};{+5};{6};{7};</value>
+        </property>
+        <property name="type" value="AdighaProduct"/>
     </bean>
 </beans>
