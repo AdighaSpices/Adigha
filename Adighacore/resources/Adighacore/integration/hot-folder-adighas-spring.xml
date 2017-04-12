@@ -134,6 +134,7 @@
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
           p:mapping="internal_base_recipe"
           p:converter-ref="batchInternalRecipeConverter"/>
+          
    <bean id="batchInternalProductConverterMapping"
           class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
           p:mapping="internal_base_product"
@@ -181,8 +182,8 @@
     <bean id="batchInternalProductConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
         <property name="header">
             <value>#{defaultImpexCategoryHeader}
-                ## products
-                INSERT_UPDATE $TYPE$;code[unique=true];name;description;$catalogVersion;recipe(code);approvalStatus(code);supercategories(code, $catalogVersion);isTodaySpecial[default='false']
+                ## Insert Products
+                INSERT_UPDATE AdighaProduct;code[unique=true];name;description;$catalogVersion;recipe(code);approvalStatus(code);supercategories(code, $catalogVersion);isTodaySpecial[default='false'];
             </value>
         </property>
         <property name="impexRow">
