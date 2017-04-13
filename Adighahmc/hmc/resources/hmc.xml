@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="hybris.de/schemas/hmc/generic"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="hybris.de/schemas/hmc/generic hmc.xsd">
+
+	<!-- Configuration for extension adigha -->
+	<explorertree>
+		<group name="adighagroup">
+			<typeref type="AdighaProduct" />
+			<typeref type="AdighaRecipe" />
+		</group>
+	</explorertree>
+
+	<type name="AdighaProduct" mode="append">
+		<organizer>
+			<search mode="replace">
+				<condition attribute="code" />
+				<condition attribute="recipe" />
+				<condition attribute="isTodaySpecial" />
+			</search>
+			<result>
+				<listview mode="replace">
+					<itemlayout>
+						<attribute name="code" />
+						<attribute name="recipe" />
+						<attribute name="isTodaySpecial" />
+					</itemlayout>
+				</listview>
+			</result>
+			<editor>
+				<essentials>
+					<listlayout>
+						<attribute name="code" />
+					</listlayout>
+				</essentials>
+				<tab name="tab.adigha">
+					<section name="section.adigha">
+						<listlayout>
+							<attribute name="recipe" />
+							<attribute name="isTodaySpecial" />
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+	
+	<type name="AdighaRecipe" mode="append">
+		<organizer>
+			<search mode="replace">
+				<condition attribute="code" />
+				<condition attribute="name" />
+				<condition attribute="description" />
+				<condition attribute="media" />
+			</search>
+			<result>
+				<listview mode="replace">
+					<itemlayout>
+						<attribute name="code" />
+						<attribute name="name" />
+						<attribute name="description" />
+						<attribute name="media" />
+					</itemlayout>
+				</listview>
+			</result>
+			<editor>
+				<essentials>
+					<listlayout>
+						<attribute name="code" />
+					</listlayout>
+				</essentials>
+				<tab name="tab.adigha">
+					<section name="section.adigha">
+						<listlayout>
+							<attribute name="name" />
+							<attribute name="description" />
+							<attribute name="media" />
+						</listlayout>
+					</section>
+				</tab>
+			</editor>
+		</organizer>
+	</type>
+	
+</configuration>
