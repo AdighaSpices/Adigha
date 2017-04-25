@@ -66,6 +66,7 @@ a.bookMan {
 
 #mainMenu {
 	font: bold italic 16px/120% "Bookman Old Style", Georgia;
+	border-bottom: 5px solid #4F2600;
 }
 
 #mainMenu ul li {
@@ -76,6 +77,7 @@ a.bookMan {
 
 #stickySearch {
 	margin-top: 22px;
+	border-bottom: 5px solid #4F2600;
 }
 
 .stickyNews p {
@@ -1404,6 +1406,7 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset
 
 .container_12 .grid_12, .container_16 .grid_16 {
 	width: 940px;
+	border-bottom: 5px solid #4F2600;
 }
 
 .alpha {

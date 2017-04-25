@@ -14,14 +14,54 @@
 
 <header class="header">
 	<div id="header" class="grid_16">
-		<cms:pageSlot position="SiteLogo" var="logo" limit="1">
-			<cms:component component="${logo}" element="div" class="yComponentWrapper"/>
-		</cms:pageSlot>
-      <div id="headright" class="grid_7 prefix_5 omega">
-        <h3 class="login"><a href="login.html">Sign up</a> / <a href="login.html">Login</a></h3>
-        <p>Subtotal: $ 00.00</p>
-        <p><span class="vChart"><a href="shoppingcart.html">View Cart</a></span> <span class="cOut"><a href="checkout.html">Checkout</a></span></p>
-      </div>
-    </div>
+		<div id="logo" class="grid_4 alpha">
+
+			<cms:pageSlot position="SiteLogo" var="logo" limit="1">
+				<cms:component component="${logo}" element="div"
+					class="yComponentWrapper" />
+			</cms:pageSlot>
+		</div>
+		<div id="headright" class="grid_7 prefix_5 omega">
+			<h3 class="login">
+				<a href="login.html">Sign up</a> / <a href="login.html">Login</a>
+			</h3>
+			<p>Subtotal: $ 00.00</p>
+			<p>
+				<span class="vChart"><a href="shoppingcart.html">View
+						Cart</a></span> <span class="cOut"><a href="checkout.html">Checkout</a></span>
+			</p>
+		</div>
+	</div>
+
+
+
+	<!-- TODO Header Navigation Nodes -->
+	<div id="mainMenu" class="grid_16">
+		<ul>
+			<li><a href="index.html" class="aActive">Home</a></li>
+			<li><a href="#">Cakes</a></li>
+			<li><a href="#">Order &amp; Delivery</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+
+	<!-- TODO Discounts and Search Integration -->
+	<div id="stickySearch" class="grid_16">
+		<div class="stickyNews grid_12 alpha">
+			<p>
+				Promotions and Discouts will display here <em>Free Delivery.</em> <a
+					href="#" class="bookMan">More</a>
+			</p>
+		</div>
+		<div class="search grid_4 omega">
+			<form action="#" method="get">
+				<input type="text" value="Type your keyword" id="s" name="s"
+					onfocus="if (this.value == 'Type your keyword') {this.value = '';}"
+					onblur="if (this.value == '') {this.value = 'Type your keyword';}">
+			</form>
+		</div>
+	</div>
 	<nav:topNavigation />
 </header>
