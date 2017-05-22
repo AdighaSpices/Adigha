@@ -31,3 +31,27 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 
 INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='adighashomepage']; contentSlot(uid,$contentCV)[unique=true]
 ;;Section1-HomePage;Section1;;Section1Slot-HomePage
+;;Login-homepage;Login;;LoginSlot-Homepage
+;;Register-homepage;Register;;RegisterSlot-Homepage
+;;Home-homepage;Home;;HomeSlot-Homepage
+
+#Login Link Component and ContentSlot
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en]; target(code)[default='sameWindow'];
+;;LoginLink;LOGIN;/login;LOGIN;
+;;RegisterLink;REGISTER;/register;REGISTER;
+;;HomeLink;Home Link;/;Home;
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
+;;LoginSlot-Homepage;Login Slot for Homepage;true;LoginLink
+;;RegisterSlot-Homepage;Register Slot for Homepage;true;RegisterLink
+;;HomeSlot-Homepage;Home Slot for Homepage;true;HomeLink
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='LoginPage']; contentSlot(uid,$contentCV)[unique=true]
+;;Login-loginpage;Login;;LoginSlot-Homepage
+;;Register-loginpage;Register;;RegisterSlot-Homepage
+;;Home-loginpage;Home;;HomeSlot-Homepage
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='RegisterPage']; contentSlot(uid,$contentCV)[unique=true]
+;;Login-registerpage;Login;;LoginSlot-Homepage
+;;Register-registerpage;Register;;RegisterSlot-Homepage
+;;Home-registerpage;Home;;HomeSlot-Homepage

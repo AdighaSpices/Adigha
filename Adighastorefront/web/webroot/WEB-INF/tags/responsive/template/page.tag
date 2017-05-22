@@ -29,7 +29,7 @@
 		<div id="warp">
 		  	<div id="main" class="container_16">
 				<header:header hideHeaderLinks="${hideHeaderLinks}" />
-				
+				<jsp:doBody />
 				<div class="products grid_16">
 					<div class="productsWarp">
 						<cms:pageSlot position="Section1" var="feature">
@@ -55,7 +55,6 @@
 		</div>
 		<div>
 			<common:globalMessages />
-			<jsp:doBody />
 		</div>
 
 

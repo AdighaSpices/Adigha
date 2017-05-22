@@ -22,20 +22,26 @@
 		labelKey="register.title" selectCSSClass="form-control"
 		path="titleCode" mandatory="true" skipBlank="false"
 		skipBlankMessageKey="form.select.empty" items="${titles}" />
+	<br />
 	<formElement:formInputBox idKey="register.firstName"
 		labelKey="register.firstName" path="firstName" inputCSS="form-control"
 		mandatory="true" />
+	<br />
 	<formElement:formInputBox idKey="register.lastName"
 		labelKey="register.lastName" path="lastName" inputCSS="form-control"
 		mandatory="true" />
+	<br />
 	<formElement:formInputBox idKey="register.email"
 		labelKey="register.email" path="email" inputCSS="form-control"
 		mandatory="true" />
+	<br />
 	<formElement:formPasswordBox idKey="password" labelKey="register.pwd"
 		path="pwd" inputCSS="form-control password-strength" mandatory="true" />
+	<br />
 	<formElement:formPasswordBox idKey="register.checkPwd"
 		labelKey="register.checkPwd" path="checkPwd" inputCSS="form-control"
 		mandatory="true" />
+	<br />
 	<input type="hidden" id="recaptchaChallangeAnswered"
 		value="${requestScope.recaptchaChallangeAnswered}" />
 	<div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>

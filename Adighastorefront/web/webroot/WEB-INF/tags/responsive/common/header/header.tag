@@ -9,7 +9,8 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav"%>
-
+<%@ taglib prefix="footer"
+	tagdir="/WEB-INF/tags/responsive/common/footer"%>
 
 
 <header class="header">
@@ -23,8 +24,15 @@
 		</div>
 		<div id="headright" class="grid_7 prefix_5 omega">
 			<h3 class="login">
-				<a href="login.html">Sign up</a> / <a href="login.html">Login</a>
-			</h3>
+				<!-- <a href="login.html">Sign up</a> / <a href="login.html">Login</a> -->
+			
+				<cms:pageSlot position="Login" var="feature" element="div" class="footer-banner">
+			        <cms:component component="${feature}"/>
+			    </cms:pageSlot>
+			    <cms:pageSlot position="Register" var="feature" element="div" class="footer-banner">
+			        <cms:component component="${feature}"/>
+			    </cms:pageSlot>
+			  </h3>
 			<p>Subtotal: $ 00.00</p>
 			<p>
 				<span class="vChart"><a href="shoppingcart.html">View
@@ -38,7 +46,12 @@
 	<!-- TODO Header Navigation Nodes -->
 	<div id="mainMenu" class="grid_16">
 		<ul>
-			<li><a href="index.html" class="aActive">Home</a></li>
+			<li><a href="index.html" class="aActive">
+			<cms:pageSlot position="Home" var="feature" element="div" class="login-right-content-slot">
+				<cms:component component="${feature}"  element="div" class="login-right-content-component"/>
+			</cms:pageSlot>
+			</a></li>
+			
 			<li><a href="#">Cakes</a></li>
 			<li><a href="#">Order &amp; Delivery</a></li>
 			<li><a href="#">Blog</a></li>

@@ -17,12 +17,11 @@
 		</div>
 	</div> --%>
 
-	<div class="loginPage grid_8 omega">
-		<h4>Login</h4>
-		<cms:pageSlot position="LeftContentSlot" var="feature" element="div"
-			class="login-right-content-slot">
-			<cms:component component="${feature}" element="div"
-				class="login-right-content-component" />
+	<div class="newAccount grid_8 alpha">
+		<h4>Create New Account</h4>
+		<cms:pageSlot position="RightContentSlot" var="feature">
+			<cms:component component="${feature}" />
 		</cms:pageSlot>
+		
 	</div>
 </template:page>
