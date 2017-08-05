@@ -40,7 +40,7 @@ a.bookMan {
 	font: bold 16px/120% "Bookman Old Style", Georgia;
 	text-transform: uppercase;
 	margin-top: 15px;
-	margin-bottom: 30px;
+	margin-bottom: 60px;
 }
 
 #headright .login span.hiUser, #headright .login span.myAccount {
@@ -55,13 +55,16 @@ a.bookMan {
 }
 
 #headright p {
-	margin: 2px 0;
+	margin: 4px 0;
+	font-family: "Arial Black", Georgia, serif;
 }
 
 #headright span {
-	font-size: 9px;
-	margin-left: 10px;
+	font-size: 12px;
+	margin-left: 17px;
 	text-transform: uppercase;
+	font-family: "Arial Black", Georgia, serif;
+	color: #FF6666;
 }
 
 #mainMenu {
@@ -87,7 +90,7 @@ a.bookMan {
 
 .search {
 	background: url(images/search.jpg) no-repeat;
-	margin-top: 5px;
+	margin-top: -6px;
 	height: 26px;
 }
 
@@ -143,7 +146,8 @@ dl.subscriber dd span, dl.follower dd span {
 	overflow: hidden;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
-	width: 940px;
+	padding-top: 6px;
+	width: 931px;
 	height: 398px;
 }
 
@@ -1002,7 +1006,7 @@ a.feedSmall {
 }
 
 #warp {
-	background: #281300 url(images/bg-head.jpg) repeat-x;
+	background: #78d6bd url(images/bg-head.jpg) repeat-x;
 	padding-bottom: 20px;
 }
 
@@ -1138,7 +1142,7 @@ a.nextButton:hover {
 }
 
 #footer {
-	background: #281300 url(images/bg-footer.jpg) repeat-x bottom;
+	background: #209b9c url(images/bg-footer.jpg) repeat-x bottom;
 }
 
 a.facebook {
@@ -1208,6 +1212,7 @@ body, a:hover, #headright h3.login a:hover, .aActive, a.bookMan:hover,
 
 #headright h3.login, #headright h3.login a, a.bookMan {
 	color: #FF6666;
+	font-family: "Arial Black", Georgia, serif;
 }
 
 .fromBlog h4, .corporateInfo h4, .storeDelivery h4, .socialNet h4,
@@ -1220,17 +1225,17 @@ body, a:hover, #headright h3.login a:hover, .aActive, a.bookMan:hover,
 }
 
 #fresh {
-	background: #40210B;
+	background: #209b9c;
 	border-top: 1px solid #5B2F0D;
 	border-bottom: 1px solid #5B2F0D;
 }
 
 #richContent {
-	background: #281300;
+	background: #209b9c;
 }
 
 #richContent2 {
-	background: #1E0D00;
+	background: #209b9c;
 	border-top: 1px solid #40210B;
 }
 
@@ -1470,7 +1475,7 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset
 }
 
 .container_16 .grid_7 {
-	width: 400px;
+	width: 389px;
 }
 
 .container_16 .grid_9 {

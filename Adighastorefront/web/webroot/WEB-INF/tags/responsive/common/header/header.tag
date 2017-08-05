@@ -16,7 +16,6 @@
 <header class="header">
 	<div id="header" class="grid_16">
 		<div id="logo" class="grid_4 alpha">
-
 			<cms:pageSlot position="SiteLogo" var="logo" limit="1">
 				<cms:component component="${logo}" element="div"
 					class="yComponentWrapper" />
@@ -24,15 +23,28 @@
 		</div>
 		<div id="headright" class="grid_7 prefix_5 omega">
 			<h3 class="login">
-				<!-- <a href="login.html">Sign up</a> / <a href="login.html">Login</a> -->
-			
-				<cms:pageSlot position="Login" var="feature" element="div" class="footer-banner">
-			        <cms:component component="${feature}"/>
-			    </cms:pageSlot>
-			    <cms:pageSlot position="Register" var="feature" element="div" class="footer-banner">
-			        <cms:component component="${feature}"/>
-			    </cms:pageSlot>
-			  </h3>
+				<c:choose>
+					<c:when test="${not empty loginSuccess and loginSuccess}">
+						<span class="hiUser">Hi, <c:out value="${userName}"></c:out>
+							|
+						</span>
+						<span class="myAccount"><a href="#">My Account</a></span>
+						<a href="#">Logout</a>
+					</c:when>
+					<c:otherwise>
+						<cms:pageSlot position="Login" var="feature" element="div"
+							class="footer-banner">
+							<cms:component component="${feature}" />
+						</cms:pageSlot>
+						<cms:pageSlot position="Register" var="feature" element="div"
+							class="footer-banner">
+							<cms:component component="${feature}" />
+						</cms:pageSlot>
+					</c:otherwise>
+				</c:choose>
+			</h3>
+
+
 			<p>Subtotal: $ 00.00</p>
 			<p>
 				<span class="vChart"><a href="shoppingcart.html">View
@@ -46,12 +58,14 @@
 	<!-- TODO Header Navigation Nodes -->
 	<div id="mainMenu" class="grid_16">
 		<ul>
-			<li><a href="index.html" class="aActive">
-			<cms:pageSlot position="Home" var="feature" element="div" class="login-right-content-slot">
-				<cms:component component="${feature}"  element="div" class="login-right-content-component"/>
-			</cms:pageSlot>
+			<li><a href="index.html" class="aActive"> <cms:pageSlot
+						position="Home" var="feature" element="div"
+						class="login-right-content-slot">
+						<cms:component component="${feature}" element="div"
+							class="login-right-content-component" />
+					</cms:pageSlot>
 			</a></li>
-			
+
 			<li><a href="#">Cakes</a></li>
 			<li><a href="#">Order &amp; Delivery</a></li>
 			<li><a href="#">Blog</a></li>
@@ -68,13 +82,16 @@
 					href="#" class="bookMan">More</a>
 			</p>
 		</div>
-		<div class="search grid_4 omega">
-			<form action="#" method="get">
+		<form action="#" method="get">
+			<div class="search grid_4 omega">
+
 				<input type="text" value="Type your keyword" id="s" name="s"
 					onfocus="if (this.value == 'Type your keyword') {this.value = '';}"
 					onblur="if (this.value == '') {this.value = 'Type your keyword';}">
-			</form>
-		</div>
+
+				<input type="button" value="Search" />
+			</div>
+		</form>
 	</div>
 	<nav:topNavigation />
 </header>

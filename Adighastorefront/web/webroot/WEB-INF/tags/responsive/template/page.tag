@@ -39,17 +39,62 @@
 				</div>
 				
 				
-				
-				<div class="productThumb grid_10 prefix_3 suffix_3">
-			      <ul>
-			        <li class="grid_2 alpha"><a href="#" class=""><img src="images/thumb1.jpg" alt="" width="100" height="60"></a></li>
-			        <li class="grid_2"><a href="#" class=""><img src="images/thumb2.jpg" alt="" width="100" height="60"></a></li>
-			        <li class="grid_2"><a href="#" class=""><img src="images/thumb1.jpg" alt="" width="100" height="60"></a></li>
-			        <li class="grid_2"><a href="#" class=""><img src="images/thumb2.jpg" alt="" width="100" height="60"></a></li>
-			        <li class="grid_2 omega"><a href="#" class="current"><img src="images/thumb1.jpg" alt="" width="100" height="60"></a></li>
-			      </ul>
-			    </div>
-    
+	<div id="fresh">
+		<div class="container_16">
+			<div id="freshCake" class="grid_16">
+				<div class="grid_1 alpha">
+					<a class="prevButton disabled">«</a>
+				</div>
+				<div class="headLine grid_14">
+					<h3>Select a product from below</h3>
+				</div>
+				<div class="grid_1 omega">
+					<a class="nextButton">»</a>
+				</div>
+			</div>
+			<div class="newCakes">
+				<div class="scroller">
+
+					<div class="cake-row">
+						<div class="newCake">
+							<a href="product-details.html" class="grid_4"><img
+								src="images/freshCake1.jpg" alt="" width="220" height="120">Product 1</a>
+						</div>
+						<div class="newCake">
+							<a href="product-details.html" class="grid_4"><img
+								src="images/freshCake2.jpg" alt="" width="220" height="120">Product 2</a>
+						</div>
+						<div class="newCake">
+							<a href="product-details.html" class="grid_4"><img
+								src="images/freshCake3.jpg" alt="" width="220" height="120">Product 3</a>
+						</div>
+						<div class="newCake">
+							<a href="product-details.html" class="grid_4"><img
+								src="images/freshCake4.jpg" alt="" width="220" height="120">Product 4</a>
+						</div>
+					</div>
+					<div class="cake-row">
+						<div class="newCake">
+							<a href="product-details.html" class="grid_4"><img
+								src="images/freshCake2.jpg" alt="" width="220" height="120">Product 5</a>
+						</div>
+						<div class="newCake">
+							<a href="product-details.html" class="grid_4"><img
+								src="images/freshCake3.jpg" alt="" width="220" height="120">Product 6</a>
+						</div>
+						<div class="newCake">
+							<a href="product-details.html" class="grid_4"><img
+								src="images/freshCake4.jpg" alt="" width="220" height="120">Product 7</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	
+	
 			</div>
 		 	<div class="clear"></div>
 		</div>

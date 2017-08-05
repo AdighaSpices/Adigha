@@ -21,58 +21,5 @@
 	</div> --%>
 
 
-	<div id="fresh">
-		<div class="container_16">
-			<div id="freshCake" class="grid_16">
-				<div class="grid_1 alpha">
-					<a class="prevButton disabled">«</a>
-				</div>
-				<div class="headLine grid_14">
-					<h3>Fresh from the oven</h3>
-				</div>
-				<div class="grid_1 omega">
-					<a class="nextButton">»</a>
-				</div>
-			</div>
-			<div class="newCakes">
-				<div class="scroller">
-
-					<div class="cake-row">
-						<div class="newCake">
-							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake1.jpg" alt="" width="220" height="120"></a>
-						</div>
-						<div class="newCake">
-							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake2.jpg" alt="" width="220" height="120"></a>
-						</div>
-						<div class="newCake">
-							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake3.jpg" alt="" width="220" height="120"></a>
-						</div>
-						<div class="newCake">
-							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake4.jpg" alt="" width="220" height="120"></a>
-						</div>
-					</div>
-					<div class="cake-row">
-						<div class="newCake">
-							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake2.jpg" alt="" width="220" height="120"></a>
-						</div>
-						<div class="newCake">
-							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake3.jpg" alt="" width="220" height="120"></a>
-						</div>
-						<div class="newCake">
-							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake4.jpg" alt="" width="220" height="120"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="clear"></div>
-	</div>
 
 </template:page>
