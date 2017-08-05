@@ -18,7 +18,6 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.Abstrac
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
-import com.india.adigha.storefront.controllers.ControllerConstants;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +28,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.UrlPathHelper;
+
+import com.india.adigha.storefront.controllers.ControllerConstants;
 
 
 /**
@@ -78,7 +79,7 @@ public class DefaultPageController extends AbstractPageController
 
 	/**
 	 * Lookup the CMS Content Page for this request.
-	 * 
+	 *
 	 * @param request
 	 *           The request
 	 * @return the CMS content page
