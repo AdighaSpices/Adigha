@@ -3,7 +3,6 @@
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
-<template:page pageTitle="${pageTitle}">
 <!-- Google Analytics -->
 	<!-- Adding Tracking code Mandatory -->
 	<script type="text/javascript">
@@ -29,7 +28,7 @@
 	<!-- Enabling e-Commerce Transaction Tracking  -->	
 <!-- Google Analytics -->
 
-
+<template:page pageTitle="${pageTitle}">
 
 	<%-- 	<div id="warp">
 		<div id="main" class="container_16">

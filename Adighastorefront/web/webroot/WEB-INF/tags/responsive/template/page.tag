@@ -14,17 +14,6 @@
 <%@ taglib prefix="cart" tagdir="/WEB-INF/tags/responsive/cart"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
-<template:master pageTitle="${pageTitle}">
-
-
-	<jsp:attribute name="pageCss">
-		<jsp:invoke fragment="pageCss" />
-	</jsp:attribute>
-
-	<jsp:attribute name="pageScripts">
-		<jsp:invoke fragment="pageScripts" />
-	</jsp:attribute>
-
 <!-- Google Analytics -->
 	<!-- Adding Tracking code Mandatory -->
 	<script type="text/javascript">
@@ -50,6 +39,16 @@
 	<!-- Enabling e-Commerce Transaction Tracking  -->	
 <!-- Google Analytics -->
 
+<template:master pageTitle="${pageTitle}">
+
+	<jsp:attribute name="pageCss">
+		<jsp:invoke fragment="pageCss" />
+	</jsp:attribute>
+
+	<jsp:attribute name="pageScripts">
+		<jsp:invoke fragment="pageScripts" />
+	</jsp:attribute>
+	
 	<jsp:body>
 		<div id="warp">
 		  	<div id="main" class="container_16">
