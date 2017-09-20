@@ -20,6 +20,7 @@
 				<ref bean="sessionFilter" />
 				<ref bean="AdighasstorefrontDataSourceSwitchingFilter" />
 				<ref bean="AdighasstorefrontCatalogVersionActivationFilter" />
+				<ref bean="AdighasTestFilter" />
 			</list>
 		</constructor-arg>
 	</bean>
@@ -51,5 +52,8 @@
 
 	<bean id="AdighasstorefrontProfileFilter" class="de.hybris.platform.servicelayer.web.ProfileFilter">
 	</bean>
+
+	<bean id="AdighasTestFilter" class="com.india.adigha.storefront.filters.AdighasTestFilter" />
+
 
 </beans>

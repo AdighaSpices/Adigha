@@ -161,13 +161,34 @@
 			files to build up the configuration for the application.
 		</description>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>WEB-INF/config/web-application-config.xml</param-value>
+		<param-value>WEB-INF/config/web-application-config.xml WEB-INF/Adighastorefront-web-spring.xml</param-value>
 	</context-param>
 	<context-param>
 		<param-name>tagpoolMaxSize</param-name>
 		<param-value>50</param-value>
 	</context-param>	
+	<!--
+		Enabling a Spring web application context with 'session' and 'request' scope.
+		- The 'contextConfigLocation' param specifies where your configuration files are located.
+		- The HybrisContextLoaderListener extends the usual SpringContextLoaderListener (which loads
+		  the context from specified location) by adding the global application context of
+		  the platform as parent context. 
+		- The RequestContextListener is needed for exposing the 'request' scope to the context.
+		  Furthermore it is needed when overriding the 'jalosession' bean for your web application.
+	 -->
+<!-- 	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/Adighastorefront-web-spring.xml</param-value>
+	</context-param>
 
+	<listener>
+		<listener-class>de.hybris.platform.spring.HybrisContextLoaderListener</listener-class>
+	</listener>
+	
+	<listener>
+    	<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener> -->
+	
 	<!-- Servlets -->
 
 	<servlet>
