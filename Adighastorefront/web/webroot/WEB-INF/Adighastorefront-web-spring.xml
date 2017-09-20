@@ -11,7 +11,7 @@
 	<context:annotation-config />
 
 	<!-- Spring managed FilterChain for Adighasstorefront Filter stack -->
-	<bean id="AdighasstorefrontFilterChain" class="de.hybris.platform.servicelayer.web.PlatformFilterChain">
+<!-- 	<bean id="AdighasstorefrontFilterChain" class="de.hybris.platform.servicelayer.web.PlatformFilterChain">
 		<constructor-arg>
 			<list>
 				<ref bean="AdighasstorefrontProfileFilter" />
@@ -35,7 +35,7 @@
 	<bean id="AdighasstorefrontRedirectFilter"
 		class="de.hybris.platform.servicelayer.web.RedirectWhenSystemIsNotInitializedFilter">
 		<constructor-arg>
-			<value><!-- nothing - redirect to default maintenance page -->
+			<value>nothing - redirect to default maintenance page
 			</value>
 		</constructor-arg>
 		<constructor-arg>
@@ -54,6 +54,6 @@
 	</bean>
 
 	<bean id="AdighasTestFilter" class="com.india.adigha.storefront.filters.AdighasTestFilter" />
-
+ -->
 
 </beans>

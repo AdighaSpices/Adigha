@@ -110,7 +110,7 @@
 	<filter-mapping><filter-name>storefrontTenantFilterChain</filter-name><servlet-name>DispatcherServlet</servlet-name></filter-mapping>
 
 	<!-- Spring managed FilterChain for Adighasstorefront Filter stack -->
-	<filter>
+<!-- 	<filter>
 		<filter-name>AdighasstorefrontFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>		
 	</filter>
@@ -118,7 +118,9 @@
 		<filter-name>AdighasstorefrontFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!-- HTTP Session Listeners -->
+ -->	
+ 
+ 	<!-- HTTP Session Listeners -->
 	
 	<listener>
 		<description>https://jira.spring.io/browse/SPR-9014
@@ -161,7 +163,7 @@
 			files to build up the configuration for the application.
 		</description>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>WEB-INF/config/web-application-config.xml WEB-INF/Adighastorefront-web-spring.xml</param-value>
+		<param-value>WEB-INF/config/web-application-config.xml</param-value>
 	</context-param>
 	<context-param>
 		<param-name>tagpoolMaxSize</param-name>
