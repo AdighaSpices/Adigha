@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<!-- Spring managed FilterChain for Adighasstorefront Filter stack -->
+	<bean id="AdighasstorefrontFilterChain" class="de.hybris.platform.servicelayer.web.PlatformFilterChain">
+		<constructor-arg>
+			<list>
+				<ref bean="AdighasstorefrontProfileFilter" />
+				<ref bean="log4jFilter" />
+				<ref bean="AdighasstorefrontRedirectFilter" />
+				<ref bean="sessionFilter" />
+				<ref bean="AdighasstorefrontDataSourceSwitchingFilter" />
+				<ref bean="AdighasstorefrontCatalogVersionActivationFilter" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="AdighasstorefrontCatalogVersionActivationFilter"
+		class="de.hybris.platform.servicelayer.web.SimpleCatalogVersionActivationFilter">
+		<property name="catalogVersionService" ref="catalogVersionService" />
+		<property name="activeCatalogVersions"
+			value="adighasProductCatalog:Online,SampleClassification:1.0" />
+	</bean>
+
+	<bean id="AdighasstorefrontRedirectFilter"
+		class="de.hybris.platform.servicelayer.web.RedirectWhenSystemIsNotInitializedFilter">
+		<constructor-arg>
+			<value><!-- nothing - redirect to default maintenance page -->
+			</value>
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>login</value>
+				<value>static</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="AdighasstorefrontDataSourceSwitchingFilter"
+		class="de.hybris.platform.servicelayer.web.DataSourceSwitchingFilter">
+	</bean>
+
+	<bean id="AdighasstorefrontProfileFilter" class="de.hybris.platform.servicelayer.web.ProfileFilter">
+	</bean>
+
+</beans>
