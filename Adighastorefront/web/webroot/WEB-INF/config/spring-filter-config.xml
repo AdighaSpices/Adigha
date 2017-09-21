@@ -24,7 +24,15 @@
 		
 	<context:annotation-config/> 
 		
+	<bean id="AdighasstorefrontFilterChain" class="de.hybris.platform.servicelayer.web.PlatformFilterChain">
+		<constructor-arg>
+			<list>
+				<ref bean="AdighasTestFilter" />
+			</list>
+		</constructor-arg>
+	</bean>
 
+	<bean id="AdighasTestFilter" class="com.india.adigha.storefront.filters.AdighasTestFilter" />
 
 	<!-- tenant scoped filter -->
 

@@ -110,7 +110,7 @@
 	<filter-mapping><filter-name>storefrontTenantFilterChain</filter-name><servlet-name>DispatcherServlet</servlet-name></filter-mapping>
 
 	<!-- Spring managed FilterChain for Adighasstorefront Filter stack -->
-<!-- 	<filter>
+ 	<filter>
 		<filter-name>AdighasstorefrontFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>		
 	</filter>
@@ -118,7 +118,7 @@
 		<filter-name>AdighasstorefrontFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
- -->	
+
  
  	<!-- HTTP Session Listeners -->
 	

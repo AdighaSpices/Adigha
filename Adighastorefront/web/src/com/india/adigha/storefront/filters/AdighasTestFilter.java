@@ -18,7 +18,7 @@ import org.springframework.web.filter.GenericFilterBean;
  * @author santosh.bomma
  *
  */
-public class AdighasTestFilter //extends GenericFilterBean
+public class AdighasTestFilter extends GenericFilterBean
 {
 	private static final Logger LOG = Logger.getLogger(AdighasTestFilter.class);
 
@@ -40,13 +40,13 @@ public class AdighasTestFilter //extends GenericFilterBean
 	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse,
 	 * javax.servlet.FilterChain)
 	 */
-	//@Override
-	public void doFilter(/*final ServletRequest request, final ServletResponse response, final FilterChain filterChain*/)
+	@Override
+	public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain filterChain)
 			throws IOException, ServletException
 	{
 		LOG.info("############ Pre Request actions from AdighasTestFilter....   ##############");
 
-		//filterChain.doFilter(request, response);
+		filterChain.doFilter(request, response);
 
 		LOG.info("############ Post request actions from AdighasTestFilter....   ##############...");
 	}
