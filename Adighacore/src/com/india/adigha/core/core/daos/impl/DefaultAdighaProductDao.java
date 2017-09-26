@@ -34,8 +34,8 @@ public class DefaultAdighaProductDao extends DefaultGenericDao<AdighaProductMode
 	@Override
 	public List<AdighaProductModel> findAdighaProducts()
 	{
+		//TODO to retrieve products based on Staged or Online CatalogVersion
 		return find();
-
 	}
 
 }
