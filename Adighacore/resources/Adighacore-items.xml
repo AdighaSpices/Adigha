@@ -17,7 +17,7 @@
 
 	<itemtypes>
 		<itemtype code="AdighaProduct" extends="Product" autocreate="true"
-			generate="true" jaloclass="com.india.adigha.core.jalo.AdighaProduct">
+			generate="true">
 			<description>Base Adigha product extension.</description>
 			<attributes>
 				<attribute qualifier="recipe" type="AdighaRecipe">
@@ -36,8 +36,7 @@
 		</itemtype>
 
 		<itemtype code="AdighaVariantProduct" extends="VariantProduct"
-			autocreate="true" generate="true"
-			jaloclass="com.boeing.rmas.core.jalo.AdighaVariantProduct">
+			autocreate="true" generate="true">
 			<description>Base Adigha variant product extension.</description>
 			<attributes>
 				<attribute qualifier="type" type="java.lang.String">
@@ -56,8 +55,7 @@
 		</itemtype>
 
 		<itemtype code="AdighaRecipe" extends="GenericItem"
-			autocreate="true" generate="true"
-			jaloclass="com.india.adigha.core.jalo.media.AdighaRecipe">
+			autocreate="true" generate="true">
 			<deployment table="AdighaRecipe" typecode="30500" />
 			<attributes>
 				<attribute qualifier="code" type="java.lang.String">
@@ -93,6 +91,40 @@
 			</indexes>
 
 		</itemtype>
+
+
+		<!-- Table which store the user details of deleted users using AdighaUserRemoveInterceptor -->
+		<itemtype code="AdighaDeletedUserEntry" extends="GenericItem" generate="true" autocreate="true">
+			<deployment table="AdighaDeletedUserEntry" typecode="30501" />
+			<attributes>
+				<attribute qualifier="uid" type="java.lang.String">
+					<description>AdighaDeletedUserEntry unique identifier.</description>
+					<modifiers write="true" read="true" search="true" unique="true"
+						optional="false" />
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="name" type="java.lang.String">
+					<description>name of the AdighaDeletedUserEntry</description>
+					<modifiers read="true" write="true" search="true"
+						optional="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="displayName" type="java.lang.String">
+					<description>displayName of AdighaDeletedUserEntry</description>
+					<modifiers read="true" write="true" search="true"
+						optional="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="changeTimestamp" type="java.util.Date">
+					<description>date of AdighaDeletedUserEntry</description>
+					<modifiers read="true" write="true" search="true"
+						optional="true" />
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+
 		<typegroup name="Components">
 			<itemtype code="AdighasImageBannerComponent" autocreate="true"
 				generate="true" extends="BannerComponent">

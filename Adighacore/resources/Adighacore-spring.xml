@@ -207,4 +207,41 @@
  	<bean id="jrubyEngine" class="de.hybris.platform.scripting.engine.internal.impl.DefaultScriptEngineType"
 		c:name="ruby" c:fileExtension="rb" c:mime="text/x-ruby" />
 
+	<!-- ############ Interceptors and its Mappings ############ -->
+	<!-- Registering and Mapping AdighaRemoveUserInterceptor -->
+	<bean id="adighaRemoveUserInterceptor" class="com.india.adigha.core.interceptors.removeuser.impl.AdighaRemoveUserInterceptor" />
+	<!-- Add interceptor mapping to AdighaRemoveUserInterceptor interceptor -->
+	<bean id="adighaRemoveUserInterceptorMapping"
+		class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="adighaRemoveUserInterceptor" />
+		<!-- *****Represents the model in todaySpecialInterceptor class***** -->
+		<property name="typeCode" value="User" />
+	</bean>
+	
+	<!-- Registering and Mapping AdighaRemoveUserInterceptor -->
+	<bean id="adighaValidateDeleteUserEntryInterceptor" class="com.india.adigha.core.interceptors.removeuser.impl.AdighaValidateDeleteUserEntryInterceptor" />
+	<!-- Add interceptor mapping to AdighaRemoveUserInterceptor interceptor -->
+	<bean id="adighaValidateDeleteUserEntryInterceptorMapping"
+		class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="adighaValidateDeleteUserEntryInterceptor" />
+		<property name="typeCode" value="AdighaDeletedUserEntry" />
+	</bean>
+	
+	<!-- Registering and Mapping AdighaProductCodePrepareInterceptor -->
+	<bean id="adighaProductCodePrepareInterceptor" class="com.india.adigha.core.interceptors.adighaproduct.impl.AdighaProductCodePrepareInterceptor" />
+	<!-- Add interceptor mapping to AdighaRemoveUserInterceptor interceptor -->
+	<bean id="adighaProductCodePrepareInterceptorMapping"
+		class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="adighaProductCodePrepareInterceptor" />
+		<property name="typeCode" value="AdighaProduct" />
+	</bean>
+	<!-- End -->
+	
+	
+	<!-- ############ Registering all DAO beans ############-->
+	<bean id="adighaProductDao" class="com.india.adigha.core.core.daos.impl.DefaultAdighaProductDao" >
+		<constructor-arg value="AdighaProduct"/>
+	</bean>
+	<!-- End -->
+	
 </beans>
