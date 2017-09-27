@@ -17,6 +17,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.india.adigha.core.core.daos.AdighaProductDao;
+import com.india.adigha.core.model.AdighaProductModel;
 
 
 /**
