@@ -16,6 +16,7 @@ import de.hybris.platform.commerceservices.dataimport.impl.SampleDataImportServi
 import de.hybris.platform.commerceservices.setup.AbstractSystemSetup;
 import de.hybris.platform.commerceservices.setup.data.ImportData;
 import de.hybris.platform.commerceservices.setup.events.CoreDataImportedEvent;
+import de.hybris.platform.constants.CoreConstants;
 import de.hybris.platform.core.initialization.SystemSetup;
 import de.hybris.platform.core.initialization.SystemSetup.Process;
 import de.hybris.platform.core.initialization.SystemSetup.Type;
@@ -75,6 +76,28 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		return params;
 	}
 
+	@SystemSetupParameterMethod
+	public List<SystemSetupParameter> getSystemSetupParameters()
+	{
+		final List<SystemSetupParameter> params = new ArrayList<SystemSetupParameter>();
+
+		final SystemSetupParameter customDataParameter = new SystemSetupParameter("createCustomData"); //Single selection box: true/false
+		customDataParameter.setLabel("Create custom data?");
+		customDataParameter.addValue("true");
+		customDataParameter.addValue("false", true);
+		params.add(customDataParameter);
+
+		final SystemSetupParameter imports = new SystemSetupParameter("imports"); //Single selection box: list[Strings]
+		imports.setMultiSelect(true);
+		imports.setLabel("Data to import : ");
+		imports.addValue("users", true);
+		imports.addValues(new String[]
+		{ "groups", "tenants", "grandmas", "grandpas", "uncles" });
+		params.add(imports);
+
+		return params;
+	}
+
 	/**
 	 * Implement this method to create initial objects. This method will be called by system creator during
 	 * initialization and system update. Be sure that this method can be called repeatedly.
@@ -86,6 +109,25 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	public void createEssentialData(final SystemSetupContext context)
 	{
 		// Add Essential Data here as you require
+
+		//The parameters are stored in the map with the prefix <extension>_ to avoid having duplicate parameters.
+		LOG.info("-----> createCustomData : " + context.getParameter(CoreConstants.EXTENSIONNAME + "_createCustomData"));
+		final boolean customDataParameterTesting = getBooleanSystemSetupParameter(context, "_createCustomData");
+		if (customDataParameterTesting)
+		{
+			//Import necessary impex here
+			LOG.info("-----> createCustomData : " + "selected true ::::::: " + customDataParameterTesting);
+		}
+		else
+		{
+			LOG.info("-----> createCustomData : " + "selected false ::::::: " + customDataParameterTesting);
+		}
+
+		LOG.info("-----> imports :");
+		for (final String imp : context.getParameters(context.getExtensionName() + "_core_imports"))
+		{
+			LOG.info("------------------> " + imp);
+		}
 	}
 
 	/**
