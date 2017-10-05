@@ -23,4 +23,9 @@ public interface AdighaProductDao extends GenericDao<AdighaProductModel>
 	 *
 	 */
 	List<AdighaProductModel> findAdighaProducts();
+
+	List<AdighaProductModel> findTodaySpecialAdighaProducts();
+
+	AdighaProductModel findProductForCodeAndName(String code, String name);
+
 }
