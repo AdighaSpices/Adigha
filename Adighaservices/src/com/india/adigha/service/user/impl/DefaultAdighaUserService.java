@@ -74,4 +74,23 @@ public class DefaultAdighaUserService implements AdighaUserService
 		return user;
 	}
 
+	/**
+	 * @return the adighaUserDao
+	 */
+	public AdighaUserDao getAdighaUserDao()
+	{
+		return adighaUserDao;
+	}
+
+	/**
+	 * @param adighaUserDao
+	 *           the adighaUserDao to set
+	 */
+	public void setAdighaUserDao(final AdighaUserDao adighaUserDao)
+	{
+		this.adighaUserDao = adighaUserDao;
+	}
+
+
+
 }

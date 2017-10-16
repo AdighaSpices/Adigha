@@ -255,6 +255,8 @@
 	</bean>
 	<bean id="adighaUserDao"
 		class="com.india.adigha.core.core.daos.impl.DefaultAdighaUserDao">
+		<property name="modelService" ref="modelService" />
+		<property name="flexibleSearchService" ref="flexibleSearchService" />
 	</bean>
 	<!-- End -->
 	<!-- ############ Registering all Event beans ############ -->
