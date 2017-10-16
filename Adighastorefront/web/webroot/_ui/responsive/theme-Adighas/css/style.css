@@ -69,7 +69,7 @@ a.bookMan {
 
 #mainMenu {
 	font: bold italic 16px/120% "Bookman Old Style", Georgia;
-	border-bottom: 5px solid #4F2600;
+	border-bottom: 5px solid 735c55;
 }
 
 #mainMenu ul li {
@@ -80,7 +80,7 @@ a.bookMan {
 
 #stickySearch {
 	margin-top: 22px;
-	border-bottom: 5px solid #4F2600;
+	border-bottom: 5px solid #735c55;
 }
 
 .stickyNews p {
@@ -104,7 +104,7 @@ a.bookMan {
 }
 
 .pageInfo {
-	border-bottom: 1px solid #4F2600;
+	border-bottom: 1px solid #735c55;
 }
 
 .dapurBlog h3 {
@@ -736,7 +736,7 @@ a.sameInfo {
 }
 
 .products {
-	border-bottom: 1px solid #4F2600;
+	border-bottom: 1px solid #735c55;
 	margin-bottom: 20px;
 }
 
@@ -1006,7 +1006,7 @@ a.feedSmall {
 }
 
 #warp {
-	background: #78d6bd url(images/bg-head.jpg) repeat-x;
+	background: #209b9c url(images/bg-head.jpg) repeat-x;
 	padding-bottom: 20px;
 }
 
@@ -1193,7 +1193,7 @@ a, .headLine h3, .orderPhone h4, .fromBlog h5, .footMenu p span,
 	.newAccount form label, .loginPage form label, .setmyAccount h4,
 	.setBillInfo h4, .newAccount h4, .loginPage h4, .youLike h3,
 	.sideBarWarp h3, .sideBarWarp form label, .prodHeadline h3 {
-	color: #FF9900;
+	color: #0a0613;
 }
 
 dl.subscriber dd, dl.follower dd {
@@ -1211,7 +1211,7 @@ body, a:hover, #headright h3.login a:hover, .aActive, a.bookMan:hover,
 }
 
 #headright h3.login, #headright h3.login a, a.bookMan {
-	color: #FF6666;
+	color: #713d00;
 	font-family: "Arial Black", Georgia, serif;
 }
 
@@ -1260,7 +1260,7 @@ body, a:hover, #headright h3.login a:hover, .aActive, a.bookMan:hover,
 }
 
 .post, #comments {
-	border-bottom: 1px dashed #4F2600;
+	border-bottom: 1px dashed #735c55;
 }
 
 .banner250, .categories, .freshOven, .fiveStar, .flickr, .commentText,
@@ -1273,7 +1273,7 @@ body, a:hover, #headright h3.login a:hover, .aActive, a.bookMan:hover,
 }
 
 .prodNav {
-	border-bottom: 1px solid #4F2600;
+	border-bottom: 1px solid #735c55;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
@@ -1411,7 +1411,7 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset
 
 .container_12 .grid_12, .container_16 .grid_16 {
 	width: 940px;
-	border-bottom: 5px solid #4F2600;
+	border-bottom: 5px solid #735c55;
 }
 
 .alpha {

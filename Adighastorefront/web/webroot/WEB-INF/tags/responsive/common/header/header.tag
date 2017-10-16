@@ -58,19 +58,14 @@
 	<!-- TODO Header Navigation Nodes -->
 	<div id="mainMenu" class="grid_16">
 		<ul>
-			<li><a href="index.html" class="aActive"> <cms:pageSlot
+			<li><cms:pageSlot
 						position="Home" var="feature" element="div"
 						class="login-right-content-slot">
 						<cms:component component="${feature}" element="div"
 							class="login-right-content-component" />
 					</cms:pageSlot>
-			</a></li>
+			</li>
 
-			<li><a href="#">Cakes</a></li>
-			<li><a href="#">Order &amp; Delivery</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
 		</ul>
 	</div>
 
