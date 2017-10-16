@@ -47,7 +47,7 @@
 	<div class="form_field-elements control-group js-recaptcha-captchaaddon"></div>
 	<div class="form-actions clearfix">
 		<ycommerce:testId code="register_Register_button">
-			<button type="submit" class="btn btn-default btn-block">
+			<button type="submit" class="btn btn-default btn-block" style="height:30px; width:63px" >
 				<spring:theme code='${actionNameKey}' />
 			</button>
 		</ycommerce:testId>

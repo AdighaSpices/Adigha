@@ -15,28 +15,28 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
 <!-- Google Analytics -->
-	<!-- Adding Tracking code Mandatory -->
-	<script type="text/javascript">
+<!-- Adding Tracking code Mandatory -->
+<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 	</script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		var pageTracker = _gat._getTracker("UA-xxxxxx-x");
 		pageTracker._initData();
 		pageTracker._trackPageview();
 	</script>
-	<!-- Adding Tracking code Mandatory -->
+<!-- Adding Tracking code Mandatory -->
 
-	<!-- Enabling e-Commerce Transaction Tracking  -->	
-	<script type="text/javascript">
+<!-- Enabling e-Commerce Transaction Tracking  -->
+<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 	</script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		var pageTracker = _gat._getTracker("UA-xxxxxx-x");
 		; var pageTracker = _gat._getTracker("UA-XXXXX-1"); pageTracker._initData(); pageTracker._addTrans( "1234", // Order ID "Mountain View", // Affiliation "11.99", // Total "1.29", // Tax "5", // Shipping "San Jose", // City "California", // State "USA" // Country ); pageTracker._addItem( "1234", // Order ID "DD44", // SKU "T-Shirt", // Product Name "Green Medium", // Category "11.99", // Price "1" // Quantity ); pageTracker._trackTrans(); 
 	</script>
-	<!-- Enabling e-Commerce Transaction Tracking  -->	
+<!-- Enabling e-Commerce Transaction Tracking  -->
 <!-- Google Analytics -->
 
 <template:master pageTitle="${pageTitle}">
@@ -48,18 +48,21 @@
 	<jsp:attribute name="pageScripts">
 		<jsp:invoke fragment="pageScripts" />
 	</jsp:attribute>
-	
+
 	<jsp:body>
 		<div id="warp">
 		  	<div id="main" class="container_16">
 				<header:header hideHeaderLinks="${hideHeaderLinks}" />
-				<jsp:doBody />
+				
+				
+				
 				<div class="products grid_16">
 					<div class="productsWarp">
-						<cms:pageSlot position="Section1" var="feature">
+						<cms:pageSlot position="Main" var="feature">
 							<cms:component component="${feature}" />
 						</cms:pageSlot>
 					</div>
+					<jsp:doBody />
 				</div>
 				
 				
@@ -82,33 +85,33 @@
 					<div class="cake-row">
 						<div class="newCake">
 							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake1.jpg" alt="" width="220" height="120">Product 1</a>
+											src="images/freshCake1.jpg" alt="" width="220" height="120">Product 1</a>
 						</div>
 						<div class="newCake">
 							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake2.jpg" alt="" width="220" height="120">Product 2</a>
+											src="images/freshCake2.jpg" alt="" width="220" height="120">Product 2</a>
 						</div>
 						<div class="newCake">
 							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake3.jpg" alt="" width="220" height="120">Product 3</a>
+											src="images/freshCake3.jpg" alt="" width="220" height="120">Product 3</a>
 						</div>
 						<div class="newCake">
 							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake4.jpg" alt="" width="220" height="120">Product 4</a>
+											src="images/freshCake4.jpg" alt="" width="220" height="120">Product 4</a>
 						</div>
 					</div>
 					<div class="cake-row">
 						<div class="newCake">
 							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake2.jpg" alt="" width="220" height="120">Product 5</a>
+											src="images/freshCake2.jpg" alt="" width="220" height="120">Product 5</a>
 						</div>
 						<div class="newCake">
 							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake3.jpg" alt="" width="220" height="120">Product 6</a>
+											src="images/freshCake3.jpg" alt="" width="220" height="120">Product 6</a>
 						</div>
 						<div class="newCake">
 							<a href="product-details.html" class="grid_4"><img
-								src="images/freshCake4.jpg" alt="" width="220" height="120">Product 7</a>
+											src="images/freshCake4.jpg" alt="" width="220" height="120">Product 7</a>
 						</div>
 					</div>
 				</div>

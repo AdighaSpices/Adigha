@@ -40,7 +40,7 @@
 				</ycommerce:testId>
 			</div>
 		<ycommerce:testId code="loginAndCheckoutButton">
-			<button type="submit" class="btn btn-primary btn-block">
+			<button type="submit" class="btn btn-primary btn-block" style="height:30px; width:63px">
 				<spring:theme code="${actionNameKey}" />
 			</button>
 		</ycommerce:testId>

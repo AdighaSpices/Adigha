@@ -57,16 +57,15 @@
 
 	<!-- TODO Header Navigation Nodes -->
 	<div id="mainMenu" class="grid_16">
-		<ul>
-			<li><cms:pageSlot
+		<%-- <cms:pageSlot
 						position="Home" var="feature" element="div"
 						class="login-right-content-slot">
 						<cms:component component="${feature}" element="div"
 							class="login-right-content-component" />
-					</cms:pageSlot>
-			</li>
+					</cms:pageSlot> --%>
+		<nav:topNavigation />
 
-		</ul>
+
 	</div>
 
 	<!-- TODO Discounts and Search Integration -->
@@ -88,5 +87,4 @@
 			</div>
 		</form>
 	</div>
-	<nav:topNavigation />
 </header>
