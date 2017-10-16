@@ -6,52 +6,124 @@ $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCata
 $siteResource=jar:com.india.adigha.initialdata.constants.AdighaInitialDataConstants&/Adighainitialdata/import/sampledata/contentCatalogs/$contentCatalog
 $lang=en
 
-#### SiteTerms Page slots ####
+
+#### All the Media goes here ##########
+
+# SiteTerms Page slots #
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
 ;;logo;image/png;adighasLogo.png;$siteResource/images/Adighas.png
-;;rotateImage1;image/png;cb.png;$siteResource/images/cb.png
-;;rotateImage2;image/png;Fruit-des.png;$siteResource/images/Fruit-des.png
+;;HomeBannerImage;image/png;Fruit-des.png;$siteResource/images/Fruit-des.png
+;;HomeBannerImage2;image/png;cb.png;$siteResource/images/cb.png
 
-INSERT_UPDATE AdighasImageBannerComponent;$contentCV[unique=true];uid[unique=true];media(code,$contentCV);headline[lang=$lang];
-;;adighsLogo;logo;;
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
-;;SiteLogoSlot;SiteLogo;true;adighsLogo
+#### All Media Ends ##########
 
 
-INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];media(code,$contentCV);headline[lang=$lang];
-;;homeRotateBannerImage1;rotateImage1;;
-;;homeRotateBannerImage2;rotateImage2;;
 
-INSERT_UPDATE AdighasRotatingImagesComponent;$contentCV[unique=true];uid[unique=true];effect(code);banners(uid,$contentCV);timeout
-;;homeRotatingImage;;homeRotateBannerImage1,homeRotateBannerImage2;5
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
-;;Section1Slot-HomePage;rotate Image slot;true;homeRotatingImage
-
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='adighashomepage']; contentSlot(uid,$contentCV)[unique=true]
-;;Section1-HomePage;Section1;;Section1Slot-HomePage
-;;Login-homepage;Login;;LoginSlot-Homepage
-;;Register-homepage;Register;;RegisterSlot-Homepage
-;;Home-homepage;Home;;HomeSlot-Homepage
-
+#### All the Components goes here ##########
 #Login Link Component and ContentSlot
 INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en]; target(code)[default='sameWindow'];
 ;;LoginLink;LOGIN;/login;LOGIN;
 ;;RegisterLink;REGISTER;/register;REGISTER;
-;;HomeLink;Home Link;/;Home;
 
+INSERT_UPDATE AdighasImageBannerComponent;$contentCV[unique=true];uid[unique=true];media(code,$contentCV);headline[lang=$lang];
+;;adighsLogo;logo;;
+;;HomeBanner;HomeBannerImage;;
+;;HomeBanner2;HomeBannerImage2;;
+
+INSERT_UPDATE AdighasRotatingImagesComponent;$contentCV[unique=true];uid[unique=true];effect(code);banners(uid,$contentCV);timeout
+;;homeRotatingImage;;HomeBanner,HomeBanner2;11
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+;;ReturningCustomerLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerLoginComponent
+;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
+ 
+
+## Navigation Componet Starts ##
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en]; target(code)[default='sameWindow'];styleAttributes;restrictions(uid, $contentCV);onlyOneRestrictionMustApply[default=false];
+;; HomeLink; Home Link;/;Home;;"aria-haspopup='true' aria-expanded='false' class='waves-effect'";;
+;; CakesLink;Cakes Link;#;Cakes;;;
+;; PlumCakeLink;Plum Cake Link;#;Plum Cake;;;
+;; CoolCakeLink;Cool Cake Link;#;Cool Cake;;;
+;; OrdersLink;Orders Link;#;Orders;;;
+;; PlaceOrderReqLink;Place Order Request Link;#;Place Order Request;;;
+;; OrderHistoryLink;Order History Link;#;My Orders;;;
+;; HelpLink; Help Link;#;Help;;;
+;; FaqLink; FAQ Link;/faq;FAQ;;;
+;; GeneralHelpLink; General Help Link;/generalHelp;General Help;;;
+;; ContactUsLink;Contact us Link;/contactUs;Contact Us;;;
+;; MyAccountLink; My Account Link;#;My Account;;;
+
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);title[lang=en];links(uid, $contentCV);
+;HomeNavNavNode;;Home Navigation Nodes;;Home;HomeLink;
+;CakesNavNode;;Cakes Nodes;;Cakes;CakesLink;
+#;PlumCakeNavNode;;Plum Cake Node;CakesNavNode;;PlumCakeLink;
+#;CoolCakeNavNode;;Cool Cake Node;CakesNavNode;;CoolCakeLink;
+;OrdersNavNode;;Orders Nodes;;Orders;OrdersLink;
+#;PlaceOrderReqNavNode;;Place Order Request Node;OrdersNavNode;;PlaceOrderReqLink;
+#;OrderHisNavNode;;Orders History Node;OrdersNavNode;;OrderHistoryLink;
+;HelpNavNode;;Help Nodes;;Help;HelpLink;
+#;FaqNavNode;;FAQ Node;HelpNavNode;;FaqLink;
+#;GeneralHelpNavNode;;GeneralHelp;HelpNavNode;;GeneralHelpLink;
+#;ContactUsNavNode;;Contact us Node;HelpNavNode;;ContactUsLink;
+;AccountNavNode;;MyAccount Nodes;;My Account;MyAccountLink;
+
+
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;wrapAfter; link(uid, $contentCV);navigationNode(uid, $contentCV);dropDownLayout(code)
+;;HomeNavComponent;HomeNav Component;;HomeLink;HomeNavNavNode;LEFT_EDGE
+;;CakesListComponent;CakesList Component;;CakesLink;CakesNavNode;LEFT_EDGE
+;;OrdersListComponent;OrdersList Component;;OrdersLink;OrdersNavNode;LEFT_EDGE
+;;HelpListComponent;HelpList Component;;HelpLink;HelpNavNode;LEFT_EDGE
+;;AccountListComponent;AccountList Component;;MyAccountLink;AccountNavNode;LEFT_EDGE
+
+
+INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);
+;;NavBarComponent;Navigation Bar Collection Component;HomeNavComponent,CakesListComponent,OrdersListComponent,HelpListComponent,AccountListComponent;
+
+## Navigation Componet Ends ##
+
+#### All Components Ends ##########
+
+
+
+### All the ContentSlot goes here ##########
+#Login and Register links shd be in homepage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
+;;SiteLogoSlot;Default Site Logo Slot;true;adighsLogo
 ;;LoginSlot-Homepage;Login Slot for Homepage;true;LoginLink
 ;;RegisterSlot-Homepage;Register Slot for Homepage;true;RegisterLink
-;;HomeSlot-Homepage;Home Slot for Homepage;true;HomeLink
+;;NavigationBarSlot;Navigation Bar;true;NavBarComponent;
+;;MainSlot-Homepage;Main Slot for Homepage;true;homeRotatingImage;
 
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='LoginPage']; contentSlot(uid,$contentCV)[unique=true]
-;;Login-loginpage;Login;;LoginSlot-Homepage
-;;Register-loginpage;Register;;RegisterSlot-Homepage
-;;Home-loginpage;Home;;HomeSlot-Homepage
 
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]; position[unique=true]; page(uid,$contentCV)[unique=true][default='RegisterPage']; contentSlot(uid,$contentCV)[unique=true]
-;;Login-registerpage;Login;;LoginSlot-Homepage
-;;Register-registerpage;Register;;RegisterSlot-Homepage
-;;Home-registerpage;Home;;HomeSlot-Homepage
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+;;LoginContentSlot;Login Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
+;;RegisterContentSlot;Register Content Slot for Customer Register;true;NewCustomerLoginComponent;;;
+
+
+#### All ContentSlot Ends ##########
+
+
+#### All the ContentSlotForTemplate goes here ##########
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-HomePage;SiteLogo;;SiteLogoSlot;true
+;;Login-Homepage;Login;;LoginSlot-Homepage;true;
+;;Register-Homepage;Register;;RegisterSlot-Homepage;true;
+;;NavigationBar-Homepage;NavigationBar;;NavigationBarSlot;true
+;;Main-Homepage;Main;;MainSlot-Homepage;true;
+
+
+
+#### All ContentSlotForTemplate Ends ##########
+
+
+#### All the ContentSlotForPage goes here ##########
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true];;;
+;;LoginContentSlot;LeftContentSlot;LoginPage;LoginContentSlot;;;
+;;RegisterContentSlot;RightContentSlot;RegisterPage;RegisterContentSlot;;;
+
+
+#### All ContentSlotForPage Ends ##########
