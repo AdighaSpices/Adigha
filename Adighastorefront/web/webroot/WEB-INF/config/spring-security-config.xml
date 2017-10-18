@@ -81,6 +81,12 @@
 		<security:intercept-url pattern="/my-account/**" access="hasRole('ROLE_CUSTOMERGROUP')" requires-channel="https" />
 
 		<security:intercept-url pattern="/**" requires-channel="https" /> <!-- Everything should be secure -->
+	
+		<!-- Adighas Page restrictions -->
+		<security:intercept-url pattern="/**/login/**" access="!hasAnyRole('ROLE_fraudgroup')" requires-channel="https" />
+		<security:intercept-url pattern="/**/account/**" access="!hasAnyRole('ROLE_fraudgroup')" requires-channel="https" />
+		<security:intercept-url pattern="/**/cart/**" access="!hasAnyRole('ROLE_fraudgroup')" requires-channel="https" />
+
 
 		<security:form-login
 				login-page="/login"
