@@ -7,7 +7,7 @@ $siteResource=jar:com.india.adigha.initialdata.constants.AdighaInitialDataConsta
 $lang=en
 
 
-#### All the Media goes here ##########
+#### All Media goes here ##########
 
 # SiteTerms Page slots #
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
@@ -20,10 +20,10 @@ INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;
 
 
 
-#### All the Components goes here ##########
+#### All Components goes here ##########
 #Login Link Component and ContentSlot
-INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en]; target(code)[default='sameWindow'];
-;;LoginLink;LOGIN;/login;LOGIN;
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en];restrictions(uid,$contentCV);onlyOneRestrictionMustApply[default=false];target(code)[default='sameWindow'];
+;;LoginLink;LOGIN;/login;LOGIN;;
 ;;RegisterLink;REGISTER;/register;REGISTER;
 
 INSERT_UPDATE AdighasImageBannerComponent;$contentCV[unique=true];uid[unique=true];media(code,$contentCV);headline[lang=$lang];
@@ -40,8 +40,8 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
  
 
 ## Navigation Componet Starts ##
-INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en]; target(code)[default='sameWindow'];styleAttributes;restrictions(uid, $contentCV);onlyOneRestrictionMustApply[default=false];
-;; HomeLink; Home Link;/;Home;;"aria-haspopup='true' aria-expanded='false' class='waves-effect'";;
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en];restrictions(uid,$contentCV);target(code)[default='sameWindow'];styleAttributes;onlyOneRestrictionMustApply[default=false]
+;; HomeLink; Home Link;/;Home;;;;
 ;; CakesLink;Cakes Link;#;Cakes;;;
 ;; PlumCakeLink;Plum Cake Link;#;Plum Cake;;;
 ;; CoolCakeLink;Cool Cake Link;#;Cool Cake;;;
@@ -87,7 +87,7 @@ INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[uniqu
 
 
 
-### All the ContentSlot goes here ##########
+### All ContentSlot goes here ##########
 #Login and Register links shd be in homepage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
 ;;SiteLogoSlot;Default Site Logo Slot;true;adighsLogo
@@ -105,7 +105,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 #### All ContentSlot Ends ##########
 
 
-#### All the ContentSlotForTemplate goes here ##########
+#### All ContentSlotForTemplate goes here ##########
 
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-HomePage;SiteLogo;;SiteLogoSlot;true
@@ -119,11 +119,33 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 #### All ContentSlotForTemplate Ends ##########
 
 
-#### All the ContentSlotForPage goes here ##########
+#### All ContentSlotForPage goes here ##########
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true];;;
 ;;LoginContentSlot;LeftContentSlot;LoginPage;LoginContentSlot;;;
 ;;RegisterContentSlot;RightContentSlot;RegisterPage;RegisterContentSlot;;;
 
-
 #### All ContentSlotForPage Ends ##########
+
+
+
+#### All CMSRestrictions goes here ##########
+INSERT_UPDATE CMSUserGroupRestriction;$contentCV[unique=true];uid[unique=true];name;userGroups(uid);includeSubgroups[default=false];
+;;FraudUsersRestriction;User Group Restriction for Fraud Customers;fraudgroup;;
+
+INSERT_UPDATE CMSInverseRestriction;$contentCV[unique=true];uid[unique=true];name;originalRestriction(uid,$contentCV);
+;;INVERSEFraudUsersRestriction;Inverse Fraud User Restriction;FraudUsersRestriction;
+
+
+
+
+#### All CMSRestrictions Ends ##########
+
+
+#### Overriding All ContentPages goes here ##########
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true'];restrictions(uid,$contentCV);onlyOneRestrictionMustApply[default=false]
+;;LoginPage;Login Page;AdighasHomePageTemplate;login;false;;false;INVERSEFraudUsersRestriction;
+
+
+#### Overriding All ContentPages Ends ##########

@@ -25,6 +25,8 @@
 # * Tax & Tax Groups
 # * Jobs
 
+$defaultPassword=1234
+
 # Languages
 INSERT_UPDATE Language;isocode[unique=true];fallbackLanguages(isocode);active[default=true]
 ;en;;;
@@ -85,6 +87,14 @@ INSERT_UPDATE ServicelayerJob;code[unique=true];springId[unique=true]
 ;siteMapMediaJob;siteMapMediaJob
 
 
-INSERT_UPDATE UserGroup;uid[unique=true];description;
-;ADIGHAS;;
-;CSR;;
+INSERT_UPDATE UserGroup;uid[unique=true];description;groups(uid)[mode=append]
+;adighasgroup;Adighas Customer Group;customergroup;
+;CSR;CSR for Adighas site;;
+;fraudgroup;Fraud Customer Group;customergroup;
+;recipegroup; Recipe group who can edit Recipe of Product;customergroup; 
+
+
+INSERT_UPDATE Customer;uid[unique=true];groups(uid);password[default=$defaultPassword];name
+;fraudcustomer;fraudgroup;;Demo Fraud Customer
+;recipecustomer;recipegroup;;Demo Recipe Customer
+
