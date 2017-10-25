@@ -15,17 +15,42 @@
 		</enumtype>
 	</enumtypes>
 
+	<relations>
+		<relation localized="false" code="AdProduct2AdRecipe"
+			generate="true" autocreate="true">
+			<sourceElement type="AdighaProduct" qualifier="product"
+				cardinality="one">
+				<modifiers read="true" write="true" search="true" />
+			</sourceElement>
+			<targetElement type="AdighaRecipe" qualifier="recipes"
+				cardinality="many" collectiontype="list">
+				<description>List of recipes for each product</description>
+				<modifiers read="true" write="true" search="true" />
+			</targetElement>
+		</relation>
+		<relation localized="true" code="AdProduct2AdDiscount"
+			generate="true" autocreate="true">
+			<deployment table="AdProduct2AdDiscount" typecode="30300" />
+			<sourceElement type="AdighaProduct" qualifier="products"
+				cardinality="many" collectiontype="list">
+				<modifiers read="true" write="true" search="true" />
+			</sourceElement>
+			<targetElement type="AdighaDiscount" qualifier="adighasDiscounts"
+				cardinality="many" collectiontype="set">
+				<modifiers read="true" write="true" search="true" />
+			</targetElement>
+		</relation>
+
+	</relations>
+
 	<itemtypes>
 		<itemtype code="AdighaProduct" extends="Product" autocreate="true"
 			generate="true">
 			<description>Base Adigha product extension.</description>
 			<attributes>
-				<attribute qualifier="recipe" type="AdighaRecipe">
-					<description>The type of the adigha product.</description>
-					<modifiers read="true" write="true" search="true"
-						optional="true" />
-					<persistence type="property" />
-				</attribute>
+				<!-- <attribute qualifier="recipe" type="AdighaRecipe"> <description>The 
+					type of the adigha product.</description> <modifiers read="true" write="true" 
+					search="true" optional="true" /> <persistence type="property" /> </attribute> -->
 				<attribute qualifier="isTodaySpecial" type="java.lang.Boolean">
 					<description>The type of the adigha product.</description>
 					<modifiers read="true" write="true" search="true"
@@ -92,9 +117,31 @@
 
 		</itemtype>
 
+		<itemtype code="AdighaDiscount" extends="Discount"
+			autocreate="true" generate="true">
+			<description>Adigha Discounts.</description>
+			<deployment table="AdighaDiscount" typecode="30502" />
+			<attributes>
+				<attribute qualifier="additionalDiscount" type="java.lang.Double"
+					autocreate="true" generate="true">
+					<description>Additional Discount</description>
+					<defaultvalue>Double.valueOf(0.0d)</defaultvalue>
+
+					<modifiers read="true" write="true" search="true"
+						optional="true" />
+					<persistence type="property" />
+					<model>
+						<getter default="true" name="additionalDiscount">
+							<nullDecorator>Double.valueOf(0.0d)</nullDecorator>
+						</getter>
+					</model>
+				</attribute>
+			</attributes>
+		</itemtype>
 
 		<!-- Table which store the user details of deleted users using AdighaUserRemoveInterceptor -->
-		<itemtype code="AdighaDeletedUserEntry" extends="GenericItem" generate="true" autocreate="true">
+		<itemtype code="AdighaDeletedUserEntry" extends="GenericItem"
+			generate="true" autocreate="true">
 			<deployment table="AdighaDeletedUserEntry" typecode="30501" />
 			<attributes>
 				<attribute qualifier="uid" type="java.lang.String">
