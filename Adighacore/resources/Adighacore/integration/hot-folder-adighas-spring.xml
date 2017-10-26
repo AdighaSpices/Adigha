@@ -183,7 +183,7 @@
         <property name="header">
             <value>#{defaultImpexCategoryHeader}
                 ## Insert Products
-                INSERT_UPDATE AdighaProduct;code[unique=true];name;description;$catalogVersion;recipe(code);approvalStatus(code);supercategories(code, $catalogVersion);isTodaySpecial[default='false'];
+                INSERT_UPDATE AdighaProduct;code[unique=true];name;description;$catalogVersion;recipes(code);approvalStatus(code);supercategories(code, $catalogVersion);isTodaySpecial[default='false'];
             </value>
         </property>
         <property name="impexRow">
