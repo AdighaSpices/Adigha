@@ -1,0 +1,42 @@
+$productCatalog=adighasProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:com.india.adigha.initialdata.constants.AdighaInitialDataConstants&/Adighainitialdata/import/sampledata/productCatalogs/$productCatalog
+
+
+INSERT_UPDATE Media; mediaFormat(qualifier);code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+;300Wx300H;/300Wx300H/MixedVegSalad.jpg;$siteResource/images/300Wx300H/MixedVegSalad.jpg;;;images
+;300Wx300H;/300Wx300H/BundiRaita.jpg;$siteResource/images/300Wx300H/BundiRaita.jpg;;;images
+;300Wx300H;/300Wx300H/OnionSalad.jpg;$siteResource/images/300Wx300H/OnionSalad.jpg;;;images
+;300Wx300H;/300Wx300H/GreenSalad.jpg;$siteResource/images/300Wx300H/GreenSalad.jpg;;;images
+;300Wx300H;/300Wx300H/RoastedFryPapad.jpg;$siteResource/images/300Wx300H/RoastedFryPapad.jpg;;;images
+;300Wx300H;/300Wx300H/MasalaPapad.jpg;$siteResource/images/300Wx300H/MasalaPapad.jpg;;;images
+;300Wx300H;/300Wx300H/ClearSoup.jpg;$siteResource/images/300Wx300H/ClearSoup.jpg;;;images
+
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+;MixedVegSalad;/300Wx300H/MixedVegSalad.jpg;;
+;BundiRaita;/300Wx300H/BundiRaita.jpg;;
+;OnionSalad;/300Wx300H/OnionSalad.jpg;;
+;GreenSalad;/300Wx300H/GreenSalad.jpg;;
+;RoastedFryPapad;/300Wx300H/RoastedFryPapad.jpg;;
+;MasalaPapad;/300Wx300H/MasalaPapad.jpg;;
+;ClearSoup;/300Wx300H/ClearSoup.jpg;;
+
+
+UPDATE Product;code[unique=true];$picture;$thumbnail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+;P001;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;
+;P002;/300Wx300H/BundiRaita.jpg;/300Wx300H/BundiRaita.jpg;/300Wx300H/BundiRaita.jpg;/300Wx300H/BundiRaita.jpg;/300Wx300H/BundiRaita.jpg;
+;P003;/300Wx300H/OnionSalad.jpg;/300Wx300H/OnionSalad.jpg;/300Wx300H/OnionSalad.jpg;/300Wx300H/OnionSalad.jpg;/300Wx300H/OnionSalad.jpg;
+;P004;/300Wx300H/GreenSalad.jpg;/300Wx300H/GreenSalad.jpg;/300Wx300H/GreenSalad.jpg;/300Wx300H/GreenSalad.jpg;/300Wx300H/GreenSalad.jpg;
+;P005;/300Wx300H/RoastedFryPapad.jpg;/300Wx300H/RoastedFryPapad.jpg;/300Wx300H/RoastedFryPapad.jpg;/300Wx300H/RoastedFryPapad.jpg;/300Wx300H/RoastedFryPapad.jpg;
+;P006;/300Wx300H/MasalaPapad.jpg;/300Wx300H/MasalaPapad.jpg;/300Wx300H/MasalaPapad.jpg;/300Wx300H/MasalaPapad.jpg;/300Wx300H/MasalaPapad.jpg;
+;P007;/300Wx300H/ClearSoup.jpg;/300Wx300H/ClearSoup.jpg;/300Wx300H/ClearSoup.jpg;/300Wx300H/ClearSoup.jpg;/300Wx300H/ClearSoup.jpg;
+;P001Variant;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;/300Wx300H/MixedVegSalad.jpg;
