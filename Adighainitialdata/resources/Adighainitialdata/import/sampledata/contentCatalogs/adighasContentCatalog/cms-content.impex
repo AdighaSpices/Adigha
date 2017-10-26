@@ -40,8 +40,8 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
 ;;ReturningCustomerLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerLoginComponent
 ;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
  
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-;;AdighasHomepageProductCarouselComponent;Adighas Homepage Product Carousel;P001,P002,P003,P004,P005,P006,P007;allVisible;false;AdighasHomepageProductCarouselComponent
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;products(code,$productCV);scroll(code);popup;&componentRef
+;;AdighasHomepageProductCarouselComponent;Adighas Homepage Product Carousel;Select a product from below;P001,P002,P003,P004,P005,P006,P007;allVisible;false;AdighasHomepageProductCarouselComponent
 
 
 ## Navigation Componet Starts ##

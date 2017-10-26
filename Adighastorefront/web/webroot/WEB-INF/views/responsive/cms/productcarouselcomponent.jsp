@@ -9,7 +9,7 @@
 <c:choose>
 	<c:when test="${not empty productData}">
 		<div class="carousel__component">
-			<div class="carousel__component--headline">${title}</div>
+			<div class="carousel__component--headline"></div>
 
 			<c:choose>
 				<c:when test="${component.popup}">
@@ -48,7 +48,7 @@
 									<a class="prevButton disabled">«</a>
 								</div>
 								<div class="headLine grid_14">
-									<h3>Select a product from below</h3>
+									<h3>${title}</h3>
 								</div>
 								<div class="grid_1 omega">
 									<a class="nextButton">»</a>
