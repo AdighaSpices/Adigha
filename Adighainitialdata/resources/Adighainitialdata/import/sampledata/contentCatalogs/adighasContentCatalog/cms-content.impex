@@ -41,7 +41,7 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
 ;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
  
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;products(code,$productCV);scroll(code);popup;&componentRef
-;;AdighasHomepageProductCarouselComponent;Adighas Homepage Product Carousel;Select a product from below;P001,P002,P003,P004,P005,P006,P007;allVisible;false;AdighasHomepageProductCarouselComponent
+;;AdighasHomepageProductCarouselComponent;Adighas Homepage Product Carousel;Select a product from below;P018,P030,P033,P057-Red,P074,P039-Green,P088;allVisible;false;AdighasHomepageProductCarouselComponent
 
 
 ## Navigation Componet Starts ##
