@@ -64,8 +64,8 @@
 			autocreate="true" generate="true">
 			<description>Base Adigha variant product extension.</description>
 			<attributes>
-				<attribute qualifier="type" type="java.lang.String">
-					<description>type of variants for the product</description>
+				<attribute qualifier="color" type="java.lang.String">
+					<description>color of variants for the product</description>
 					<modifiers read="true" write="true" search="true"
 						optional="true" />
 					<persistence type="property" />
