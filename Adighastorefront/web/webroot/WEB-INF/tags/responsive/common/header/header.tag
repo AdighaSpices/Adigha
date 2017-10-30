@@ -15,13 +15,11 @@
 
 <header class="header">
 	<div id="header" class="grid_16">
-		<div id="logo" class="grid_4 alpha">
+		<div id="headright" class="grid_7 prefix_5 omega">
 			<cms:pageSlot position="SiteLogo" var="logo" limit="1">
 				<cms:component component="${logo}" element="div"
 					class="yComponentWrapper" />
 			</cms:pageSlot>
-		</div>
-		<div id="headright" class="grid_7 prefix_5 omega">
 			<h3 class="login">
 				<c:choose>
 					<c:when test="${not empty loginSuccess and loginSuccess}">

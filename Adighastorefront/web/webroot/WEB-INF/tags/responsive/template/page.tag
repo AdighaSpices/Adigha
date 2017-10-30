@@ -54,30 +54,13 @@
 		  	<div id="main" class="container_16">
 				<header:header hideHeaderLinks="${hideHeaderLinks}" />
 				
-				
-				
-				<div class="products grid_16">
-					<div class="productsWarp">
-						<cms:pageSlot position="Main" var="feature">
-							<cms:component component="${feature}" />
-						</cms:pageSlot>
-					</div>
-				</div>
-				
 				<jsp:doBody />
-				
-	
-	
-	
 			</div>
 		 	<div class="clear"></div>
 		</div>
 		<div>
 			<common:globalMessages />
 		</div>
-
-
-
 
 			<footer:footer />
 

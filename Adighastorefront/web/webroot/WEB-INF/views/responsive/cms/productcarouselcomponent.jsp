@@ -8,8 +8,8 @@
 
 <c:choose>
 	<c:when test="${not empty productData}">
-		<div class="carousel__component">
-			<div class="carousel__component--headline"></div>
+		<div class="">
+			<div class=""></div>
 
 			<c:choose>
 				<c:when test="${component.popup}">
@@ -54,25 +54,23 @@
 									<a class="nextButton">»</a>
 								</div>
 							</div>
-							<div class="newCakes">
-								<div class="scroller">
+							<div class="newCakes" style="margin-top: 6px">
 
-									<div class="cake-row">
-										<c:forEach items="${productData}" var="product">
-											<c:url value="${product.url}" var="productUrl" />
-											<div class="newCake">
-												<a href="${productUrl}" class="grid_4"> 
-													<product:productPrimaryImage product="${product}" format="product" /> 
-													${product.name}
-													<format:fromPrice priceData="${product.price}" />
-												</a>
-											</div>
-										</c:forEach>
+								<c:forEach items="${productData}" var="product">
+									<c:url value="${product.url}" var="productUrl" />
+									<div class="newCake">
+										<a href="${productUrl}" style="float: unset; font-size: 13px; font-weight: bold; "> <product:productPrimaryImage
+												product="${product}" format="product" /> <br />
+												
+												<c:out value="${product.name}"/>
+											    <format:fromPrice
+												priceData="${product.price}" />
+										</a>
 									</div>
-								</div>
+								</c:forEach>
 							</div>
 						</div>
-						<div class="clear"></div>
+						<div class="clear" style="height: 30px"></div>
 					</div>
 				</c:otherwise>
 			</c:choose>

@@ -1393,7 +1393,6 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset
 	display: inline;
 	float: left;
 	position: relative;
-	margin-left: 10px;
 	margin-right: 10px;
 }
 
@@ -1559,7 +1558,7 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset
 }
 
 .container_16 .prefix_5 {
-	padding-left: 300px;
+	padding-left: 500px;
 }
 
 .container_16 .prefix_6 {
