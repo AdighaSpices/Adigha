@@ -1,0 +1,6 @@
+C1,Vegitarian,Vegitarian Super Category,
+C2,Non Vegitarian,Non-Vegitarian Super Category,
+C101,Starters - Veg,"Sub Category of ""Vegitarian"" Category. Starters such as Gobi 65 etc",C1
+C102,Starters - NonVeg,"Sub Category of ""Non Vegitarian"" Category. Starters such as Chicken 65 etc",C2
+C103,MainCourse - Veg,"Sub Category of ""Vegitarian"" Category. Biryani, FriedRice etc",C1
+C104,MainCourse - NonVeg,"Sub Category of ""Non Vegitarian"" Category. Non-Veg Biryani, FriedRice etc",C2
