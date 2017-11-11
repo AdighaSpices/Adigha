@@ -55,5 +55,6 @@
 			class="no-space yComponentWrapper" />
 	</cms:pageSlot>
 
+	<p style="color: #f00; background-color: #755353; height: 5px;" />
 
 </template:page>

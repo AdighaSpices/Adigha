@@ -120,7 +120,12 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;NavigationBar-Homepage;NavigationBar;;NavigationBarSlot;true
 ;;Main-Homepage;Main;;MainSlot-Homepage;true;
 
-
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-PDPage;SiteLogo;;SiteLogoSlot;true
+;;Login-PDPage;Login;;LoginSlot-Homepage;true;
+;;Register-PDPage;Register;;RegisterSlot-Homepage;true;
+;;NavigationBar-PDPage;NavigationBar;;NavigationBarSlot;true
+;;Main-PDPage;Main;;MainSlot-Homepage;true;
 
 #### All ContentSlotForTemplate Ends ##########
 

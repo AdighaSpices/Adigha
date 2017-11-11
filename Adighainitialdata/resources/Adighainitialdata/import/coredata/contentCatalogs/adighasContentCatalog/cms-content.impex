@@ -9,7 +9,7 @@ $lang=en
 
 INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
 ;;AdighasHomePageTemplate;Adighas Home Page Template;layout/adighasHomeLayoutPage;
-
+;;ProductDetailsPageTemplate;Product Details Page Template;product/productLayout2Page;ProductPage
 
 # Site-wide Homepage
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
@@ -17,3 +17,7 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 ;;LoginPage;Login Page;AdighasHomePageTemplate;login;false;;false;
 ;;RegisterPage;Register Page;AdighasHomePageTemplate;register;false;;false;
 ;;MainPage;Center Page;AdighasHomePageTemplate;main;false;;false;
+
+# Product Details Page
+INSERT_UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']
+;;productDetails;Product Details;ProductDetailsPageTemplate;true;

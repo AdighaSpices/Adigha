@@ -4,51 +4,42 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product"%>
 
-
-<div class="product-details page-title">
-	<ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
-		<div class="name">${product.name} <span class="sku">ID</span><span class="code">${product.code}</span></div>
-	</ycommerce:testId>
-	<product:productReviewSummary product="${product}" showLinks="true"/>
-
-</div>
-<div class="row">
-	<div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
-		<product:productImagePanel galleryImages="${galleryImages}"
-			product="${product}" />
-	</div>
-	<div class="clearfix hidden-sm hidden-md hidden-lg"></div>
-	<div class="col-sm-6 col-lg-8">
-		<div class="product-main-info">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="product-details">
-						<product:productPromotionSection product="${product}"/>
-
-						<ycommerce:testId
-								code="productDetails_productNamePrice_label_${product.code}">
-							<product:productPricePanel product="${product}" />
-						</ycommerce:testId>
-
-						<div class="description">${product.summary}</div>
-					</div>
+<style type="text/css">
+table, th, td {
+}
+.description{
+color: #3E1C10; font-weight: 900; font-size: 20px; line-height: 50px;
+}
+.price{
+color: #3E1C10; font-weight: 900; font-size: 20px; line-height: 50px;
+}
+</style>
+<table>
+	<tr >
+		<th colspan="2">
+			<ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
+				<div style="color: #3E1C10; font-weight: 900; font-size: 20px; line-height: 50px;">
+					${product.code}|| ${product.name}
 				</div>
-
-				<div class="col-sm-12 col-md-9 col-lg-6">
-
-							<cms:pageSlot position="VariantSelector" var="component" element="div" class="page-details-variants-select">
-								<cms:component component="${component}" element="div" class="yComponentWrapper page-details-variants-select-component"/>
-							</cms:pageSlot>
-
-
-
-							<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
-								<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
-							</cms:pageSlot>
-
+			</ycommerce:testId>
+		</th>
+	</tr>
+	<tr>
+		<td colspan="2"><product:productImagePanel galleryImages="${galleryImages}" product="${product}" /></td>
+	</tr>
+		<tr>
+		<td><ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
+				<div class="price">
+					<product:productPricePanel product="${product}" />
 				</div>
-			</div>
-		</div>
+			</ycommerce:testId></td>
+		<td>
+			<div class="description"> ${product.description}</div>
+		</td>
+	</tr>
+	
+</table>
 
-	</div>
-</div>
+
+
+

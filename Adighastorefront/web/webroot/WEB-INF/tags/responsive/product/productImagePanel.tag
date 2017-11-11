@@ -31,10 +31,9 @@
             </div>
         </c:when>
         <c:otherwise>
-
             <div class="carousel image-gallery__image js-gallery-image">
                 <c:forEach items="${galleryImages}" var="container" varStatus="varStatus">
-                    <div class="item">
+                    <div >
                         <div>
                             <img class="lazyOwl" data-src="${container.product.url}"
                                  data-zoom-image="${container.superZoom.url}"
