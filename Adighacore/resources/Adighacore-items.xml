@@ -18,7 +18,7 @@
 	<relations>
 		<relation localized="false" code="AdProduct2AdRecipe"
 			generate="true" autocreate="true">
-			<sourceElement type="AdighaProduct" qualifier="product"
+			<sourceElement type="Product" qualifier="product"
 				cardinality="one">
 				<modifiers read="true" write="true" search="true" />
 			</sourceElement>

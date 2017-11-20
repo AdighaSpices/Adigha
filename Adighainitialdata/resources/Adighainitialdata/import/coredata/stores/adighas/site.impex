@@ -1,39 +1,4 @@
 #
 # Import the CMS Site configuration for the Adighas Store(s)
 #
-$productCatalog=adighasProductCatalog
-$contentCatalog=adighasContentCatalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$defaultLanguage=en
-
-$storeUid=adighas
-$siteUid=adighas
-
-# Import config properties into impex macros
-UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
-# Import modulegen config properties into impex macros
-$jarResource=$config-jarResource
-
-# Load the storefront context root config param
-$storefrontContextRoot=$config-storefrontContextRoot
-
-# CMS Site
-INSERT_UPDATE CMSSite;uid[unique=true];stores(uid);active;previewURL;startingPage(uid,$contentCV);urlEncodingAttributes;channel(code);
-;$siteUid;$storeUid;true;$storefrontContextRoot/?site=$siteUid;adighashomepage;language;B2C;
-
-# CMS Site Content Catalogs
-UPDATE CMSSite;uid[unique=true];contentCatalogs(id);
-;$siteUid;$contentCatalog;
-
-# CMS Site Default Catalog
-UPDATE CMSSite;uid[unique=true];defaultCatalog(id);
-;$siteUid;$productCatalog;
-
-# CMS Site Default Language
-UPDATE CMSSite;uid[unique=true];defaultLanguage(isoCode);
-;$siteUid;$defaultLanguage;
-
-# CMS Site URL Patterns
-UPDATE CMSSite;uid[unique=true];urlPatterns;
-;$siteUid;(?i)^https?://[^/]+(/[^?]*)?\?(.*\&)?(site=$siteUid)(|\&.*)$,(?i)^https?://$siteUid\.[^/]+(|/.*|\?.*)$,(?i)^https?://(adighas\..*(\.*)|.*\.adighas\..*(\.*)|.*\.adighas)+(|/.*|\?.*)$,(?i)^https?://[^/]+(/*)(adighas)?(/.*)$;
-
+# See site-responsive.impex

@@ -990,7 +990,7 @@ a.feedSmall {
 }
 
 #footer .copyright, #footer .copyright a {
-	color: #FF9900;
+	color: #5800ff;
 }
 
 #footer .copyright p {
@@ -1006,7 +1006,7 @@ a.feedSmall {
 }
 
 #warp {
-	background: #209b9c url(images/bg-head.jpg) repeat-x;
+	background: rgba(158, 58, 9, 0.42) url(images/bg-head.jpg) repeat-x;
 	padding-bottom: 20px;
 }
 
@@ -1142,7 +1142,7 @@ a.nextButton:hover {
 }
 
 #footer {
-	background: #209b9c url(images/bg-footer.jpg) repeat-x bottom;
+	background: rgba(158, 58, 9, 0.42) url(images/bg-head.jpg) repeat-x;
 }
 
 a.facebook {
@@ -1231,11 +1231,11 @@ body, a:hover, #headright h3.login a:hover, .aActive, a.bookMan:hover,
 }
 
 #richContent {
-	background: #209b9c;
+	background: rgba(158, 58, 9, 0.42) url(images/bg-head.jpg) repeat-x;
 }
 
 #richContent2 {
-	background: #209b9c;
+	background: rgba(158, 58, 9, 0.42) url(images/bg-head.jpg) repeat-x;
 	border-top: 1px solid #40210B;
 }
 
@@ -1474,7 +1474,7 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset
 }
 
 .container_16 .grid_7 {
-	width: 389px;
+	width: 937px;
 }
 
 .container_16 .grid_9 {
@@ -1558,7 +1558,6 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset
 }
 
 .container_16 .prefix_5 {
-	padding-left: 500px;
 }
 
 .container_16 .prefix_6 {
