@@ -24,63 +24,6 @@
 	<bean id="adighaCoreSystemSetup" class="com.india.adigha.core.setup.CoreSystemSetup"
 		parent="abstractCoreSystemSetup" />
 
-	<!-- Solr field value providers -->
-
-
-	<bean id="abstractCategoryCodeValueProvider" abstract="true"
-		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryCodeValueProvider"
-		parent="abstractPropertyFieldValueProvider">
-		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
-		<property name="commonI18NService" ref="commonI18NService" />
-	</bean>
-	<bean id="abstractCategoryNameValueProvider" abstract="true"
-		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryNameValueProvider"
-		parent="abstractPropertyFieldValueProvider">
-		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
-		<property name="commonI18NService" ref="commonI18NService" />
-	</bean>
-
-
-	<bean id="image515ValueProvider" parent="abstractImageValueProvider">
-		<property name="mediaFormat" value="515Wx515H" />
-	</bean>
-	<bean id="image300ValueProvider" parent="abstractImageValueProvider">
-		<property name="mediaFormat" value="300Wx300H" />
-	</bean>
-	<bean id="image96ValueProvider" parent="abstractImageValueProvider">
-		<property name="mediaFormat" value="96Wx96H" />
-	</bean>
-	<bean id="image65ValueProvider" parent="abstractImageValueProvider">
-		<property name="mediaFormat" value="65Wx65H" />
-	</bean>
-	<bean id="image30ValueProvider" parent="abstractImageValueProvider">
-		<property name="mediaFormat" value="30Wx30H" />
-	</bean>
-
-	<bean id="productUrlValueProvider"
-		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.ProductUrlValueProvider"
-		parent="abstractPropertyFieldValueProvider">
-		<property name="urlResolver" ref="productModelUrlResolver" />
-		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
-		<property name="i18nService" ref="i18nService" />
-		<property name="commonI18NService" ref="commonI18NService" />
-	</bean>
-
-	<bean id="promotionCodeValueProvider"
-		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.PromotionCodeValueProvider"
-		parent="abstractPropertyFieldValueProvider">
-		<property name="promotionsService" ref="promotionsService" />
-		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
-	</bean>
-
-	<bean id="promotionImageValueProvider"
-		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.PrimaryPromotionImageValueProvider"
-		parent="abstractPropertyFieldValueProvider">
-		<property name="promotionsService" ref="promotionsService" />
-		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
-	</bean>
-
-
 	<!-- Process resources definition -->
 
 	<bean id="customerRegistrationEmailProcessDefinitionResource"
@@ -264,5 +207,76 @@
 	<!-- <bean id="testEventListener" class="com.india.adigha.core.events.sample.TestEventListener" 
 		parent="abstractEventListener" /> -->
 	<!-- End -->
+	
+	<!-- RMAS SOLR Customizations -->
 
+	<bean id="adighasCategorySource" parent="abstractCategorySource">
+		<property name="rootCategory" value="categories" />
+	</bean>
+	
+	<bean id="adighasCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
+		<property name="categorySource" ref="adighasCategorySource" />
+	</bean>
+	
+	<bean id="adighasCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
+        <property name="categorySource" ref="adighasCategorySource"/>
+    </bean>
+    
+    <!-- Solr field value providers -->
+
+
+	<bean id="abstractCategoryCodeValueProvider" abstract="true"
+		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryCodeValueProvider"
+		parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
+		<property name="commonI18NService" ref="commonI18NService" />
+	</bean>
+	<bean id="abstractCategoryNameValueProvider" abstract="true"
+		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryNameValueProvider"
+		parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
+		<property name="commonI18NService" ref="commonI18NService" />
+	</bean>
+
+
+	<bean id="image515ValueProvider" parent="abstractImageValueProvider">
+		<property name="mediaFormat" value="515Wx515H" />
+	</bean>
+	<bean id="image300ValueProvider" parent="abstractImageValueProvider">
+		<property name="mediaFormat" value="300Wx300H" />
+	</bean>
+	<bean id="image96ValueProvider" parent="abstractImageValueProvider">
+		<property name="mediaFormat" value="96Wx96H" />
+	</bean>
+	<bean id="image65ValueProvider" parent="abstractImageValueProvider">
+		<property name="mediaFormat" value="65Wx65H" />
+	</bean>
+	<bean id="image30ValueProvider" parent="abstractImageValueProvider">
+		<property name="mediaFormat" value="30Wx30H" />
+	</bean>
+
+	<bean id="productUrlValueProvider"
+		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.ProductUrlValueProvider"
+		parent="abstractPropertyFieldValueProvider">
+		<property name="urlResolver" ref="productModelUrlResolver" />
+		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
+		<property name="i18nService" ref="i18nService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+	</bean>
+
+	<bean id="promotionCodeValueProvider"
+		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.PromotionCodeValueProvider"
+		parent="abstractPropertyFieldValueProvider">
+		<property name="promotionsService" ref="promotionsService" />
+		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
+	</bean>
+
+	<bean id="promotionImageValueProvider"
+		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.PrimaryPromotionImageValueProvider"
+		parent="abstractPropertyFieldValueProvider">
+		<property name="promotionsService" ref="promotionsService" />
+		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
+	</bean>
+    
+	<!-- END SOLR field value providers -->
 </beans>
