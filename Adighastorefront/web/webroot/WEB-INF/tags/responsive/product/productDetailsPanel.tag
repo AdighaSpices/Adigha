@@ -27,7 +27,7 @@ color: #3E1C10; font-weight: 900; font-size: 20px; line-height: 50px;
 	<tr>
 		<td colspan="2"><product:productImagePanel galleryImages="${galleryImages}" product="${product}" /></td>
 	</tr>
-		<tr>
+	<tr>
 		<td><ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
 				<div class="price">
 					<product:productPricePanel product="${product}" />
@@ -37,7 +37,18 @@ color: #3E1C10; font-weight: 900; font-size: 20px; line-height: 50px;
 			<div class="description"> ${product.description}</div>
 		</td>
 	</tr>
-	
+	<tr>
+		<td>
+			<cms:pageSlot position="VariantSelector" var="component" element="div" class="page-details-variants-select">
+				<cms:component component="${component}" element="div" class="yComponentWrapper page-details-variants-select-component"/>
+			</cms:pageSlot>
+		</td>
+		<td>
+			<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
+				<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
+			</cms:pageSlot>
+		</td>
+	</tr>
 </table>
 
 

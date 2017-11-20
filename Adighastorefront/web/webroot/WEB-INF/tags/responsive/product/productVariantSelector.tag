@@ -8,6 +8,14 @@
 
 <%@ attribute name="product" required="true" type="de.hybris.platform.commercefacades.product.data.ProductData" %>
 
+<style type="text/css">
+table, th, td {
+}
+.selectVariant{
+color: #3E1C10; font-weight: 900; font-size: 13px; line-height: 25px;
+}
+</style>
+
 <c:set var="showAddToCart" value="" scope="session"/>
 
 <c:choose>
@@ -199,7 +207,7 @@
         <c:if test="${not empty variantOptions}">
             <div class="variant-section">
                 <div class="variant-selector">
-                    <div class="variant-name">
+                    <div class="selectVariant">
                         <label for="Type"><spring:theme code="product.variants.type"/><span
                                 class="variant-selected typeName"></span></label>
                     </div>
@@ -239,7 +247,7 @@
                             </c:if>
                             <option value="${variantOptionUrl}" ${(variantOption.url eq product.url) ? 'selected="selected"' : ''}>
                                 <span class="variant-selected">${optionsString}&nbsp;<format:price
-                                        priceData="${variantOption.priceData}"/>&nbsp;&nbsp;${variantOption.stock.stockLevel}</span>
+                                        priceData="${variantOption.priceData}"/>&nbsp;&nbsp;  ${variantOption.code}&nbsp;&nbsp;${variantOption.stock.stockLevelStatus} </span>
                             </option>
                         </c:forEach>
                     </select>

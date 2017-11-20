@@ -43,6 +43,18 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
 INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;title;products(code,$productCV);scroll(code);popup;&componentRef
 ;;AdighasHomepageProductCarouselComponent;Adighas Homepage Product Carousel;Select a product from below;P018,P030,P033,P057-Red,P074,P039-Green,P088;allVisible;false;AdighasHomepageProductCarouselComponent
 
+# CMS VariantSelector Components
+INSERT_UPDATE ProductVariantSelectorComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+;;VariantSelector;Product Variant Selector;VariantSelector
+
+# CMS ProductAddToCart Components
+INSERT_UPDATE ProductAddToCartComponent;$contentCV[unique=true];uid[unique=true];name;actions(&actionRef);&componentRef
+;;AddToCart;Product Add To Cart;AddToCartAction;AddToCart
+
+# CMS AddToCart Action
+INSERT_UPDATE AddToCartAction;$contentCV[unique=true];uid[unique=true];url;name;restrictions(uid,$contentCV);&actionRef
+;;AddToCartAction;/cart/add;Product Add To Cart Action;;AddToCartAction
+
 
 ## Navigation Componet Starts ##
 INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en];restrictions(uid,$contentCV);target(code)[default='sameWindow'];styleAttributes;onlyOneRestrictionMustApply[default=false]
@@ -100,7 +112,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 ;;RegisterSlot-Homepage;Register Slot for Homepage;true;RegisterLink
 ;;NavigationBarSlot;Navigation Bar;true;NavBarComponent;
 ;;MainSlot-Homepage;Main Slot for Homepage;true;homeRotatingImage;
-
+;;VariantSelectorSlot;Variant Selector;true;VariantSelector
+;;AddToCartSlot;Add To Cart;true;AddToCart
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
 ;;LoginContentSlot;Login Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
@@ -113,12 +126,13 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 
 #### All ContentSlotForTemplate goes here ##########
 
-INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-HomePage;SiteLogo;;SiteLogoSlot;true
 ;;Login-Homepage;Login;;LoginSlot-Homepage;true;
 ;;Register-Homepage;Register;;RegisterSlot-Homepage;true;
 ;;NavigationBar-Homepage;NavigationBar;;NavigationBarSlot;true
 ;;Main-Homepage;Main;;MainSlot-Homepage;true;
+
 
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-PDPage;SiteLogo;;SiteLogoSlot;true
@@ -126,6 +140,8 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;Register-PDPage;Register;;RegisterSlot-Homepage;true;
 ;;NavigationBar-PDPage;NavigationBar;;NavigationBarSlot;true
 ;;Main-PDPage;Main;;MainSlot-Homepage;true;
+;;VariantSelector-ProductDetails;VariantSelector;;VariantSelectorSlot;true
+;;AddToCart-ProductDetails;AddToCart;;AddToCartSlot;true
 
 #### All ContentSlotForTemplate Ends ##########
 
