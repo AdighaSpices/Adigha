@@ -253,11 +253,11 @@
 		<property name="header">
 			<value>#{defaultImpexCategoryHeader}
 				## Insert Product and Price Mapping
-				INSERT_UPDATE PriceRow;$catalogVersion;sequenceId[unique=true];productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+				INSERT_UPDATE PriceRow;$catalogVersion;sequenceId[unique=true];product(code,$catalogVersion);unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;;{+0};{1};{2};{3};{4};{5};{6};{7};</value>
+			<value>;;{+0};{+1};{2};{3};{4};{5};{6};{7}</value>
 		</property>
 		<property name="type" value="PriceRow" />
 	</bean>

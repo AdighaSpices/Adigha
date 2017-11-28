@@ -176,6 +176,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 			getEventService().publishEvent(new CoreDataImportedEvent(context, importData));
 
 			super.createContentCatalogSyncJob(context, "adighasContentCatalog");
+			importImpexFile(context, "/Adighainitialdata/import/coredata/stores/adighas/solr.impex");
 			//importImpexFile(context, "/Adighainitialdata/import/coredata/stores/adighas/cart-removal-trigger.impex");
 		}
 

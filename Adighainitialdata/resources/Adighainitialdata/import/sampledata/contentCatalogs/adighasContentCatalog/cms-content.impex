@@ -102,6 +102,14 @@ INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[uniqu
 
 #### All Components Ends ##########
 
+### Customer Login
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+;;LeftContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
+;;RightContentSlot-login;Right Content Slot for Customer Register;true;NewCustomerLoginComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true];;;
+;;LeftContentSlot-login;LeftContentSlot;LoginPage;LeftContentSlot-login;;;
+;;RightContentSlot-login;RightContentSlot;RegisterPage;RightContentSlot-login;;;
 
 
 ### All ContentSlot goes here ##########
@@ -128,8 +136,6 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 
 INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-HomePage;SiteLogo;;SiteLogoSlot;true
-;;Login-Homepage;Login;;LoginSlot-Homepage;true;
-;;Register-Homepage;Register;;RegisterSlot-Homepage;true;
 ;;NavigationBar-Homepage;NavigationBar;;NavigationBarSlot;true
 ;;Main-Homepage;Main;;MainSlot-Homepage;true;
 

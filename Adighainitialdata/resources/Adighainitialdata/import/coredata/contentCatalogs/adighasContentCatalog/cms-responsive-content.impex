@@ -13,7 +13,181 @@ $jarResourceCms=$config-jarResourceCmsValue
 INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
 ;;AdighasHomePageTemplate;Adighas Home Page Template;layout/adighasHomeLayoutPage;
 ;;ProductDetailsPageTemplate;Product Details Page Template;product/productLayout2Page;ProductPage
+;;SearchResultsListPageTemplate;Search Results List Page Template;search/searchListPage;ContentPage
+;;SearchResultsGridPageTemplate;Search Results Grid Page Template;search/searchGridPage;ContentPage
+;;SearchResultsEmptyPageTemplate;Search Results Empty Page Template;search/searchEmptyPage;ContentPage
 
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;Login;;;
+;Register;;;
+;NavigationBar;;;navigation
+;Section1;;;wide
+;Section2A;;;narrow
+;Section2B;;;narrow
+;Section2C;;;wide
+;Section3;;;wide
+;Section4;;;narrow
+;Section5;;;wide
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+;Main;;;
+
+# Create Content Slots
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
+;;SiteLogoSlot;Default Site Logo Slot;true
+;;HomepageNavLinkSlot;Default Homepage Link;true
+;;MiniCartSlot;Mini Cart;true
+;;NavigationBarSlot;Navigation Bar;true
+;;TopContentSlot;Top Content;true
+;;MiddleContentSlot;Middle Content;true
+;;BottomContentSlot;Bottom Content;true
+;;SideContentSlot;Side Content;true
+;;FooterSlot;Footer;true
+;;HeaderLinksSlot;Header links;true
+;;SearchBoxSlot;Search Box;true
+;;VariantSelectorSlot;Variant Selector;true
+;;AddToCartSlot;Add To Cart;true
+;;TopHeaderSlot;Top Header;true
+;;BottomHeaderSlot;Bottom Header;true
+;;ProductListSlot;Product List;true
+;;ProductGridSlot;Product Grid;true
+;;SearchResultsListSlot;Search Result List;true
+;;SearchResultsGridSlot;Search Result Grid;true
+;;LeftContentSlot;Left Content Slot;true
+;;RightContentSlot;Right Content Slot;true
+;;CenterContentSlot;Center Content Slot;true
+;;CenterLeftContentSlot;Center Left Content Slot;true
+;;CenterRightContentSlot;Center Right Content Slot;true
+;;EmptyCartMiddleContent;Empty Cart Middle Content;true
+;;PlaceholderContentSlot;Placeholder for Addon tag files;true
+
+# Product Details Page Template
+# The CrossSelling and UpSelling slots are designed for related products, cross-sells and up-sells.
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;Section1;;;wide
+;Section2;;;wide
+;Section3;;;wide
+;Section4;;;wide
+;VariantSelector;;ProductVariantSelectorComponent;narrow
+;AddToCart;;ProductAddToCartComponent;narrow
+;CrossSelling;;ProductReferencesComponent;narrow
+;UpSelling;;ProductReferencesComponent;narrow
+;Footer;;;footer
+;Tabs;;CMSTabParagraphContainer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+
+# Search Result List / Grid are two layouts for Search Result pages
+# Search Empty is displayed when no results are found
+
+# Search Results List Page Template
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='SearchResultsListPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;ProductLeftRefinements;;;narrow
+;SearchResultsListSlot;;;wide
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+
+
+# Search Results Grid Page Template
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='SearchResultsGridPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;ProductLeftRefinements;;;narrow
+;SearchResultsGridSlot;;;wide
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+
+
+# Search Results Empty Page Template
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='SearchResultsEmptyPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;MiddleContent;;CMSParagraphComponent
+;BottomContent;;;wide
+;SideContent;;;narrow
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-HomePage;SiteLogo;;SiteLogoSlot;true
+;;NavigationBar-Homepage;NavigationBar;;NavigationBarSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-PDPage;SiteLogo;;SiteLogoSlot;true
+;;NavigationBar-PDPage;NavigationBar;;NavigationBarSlot;true
+;;VariantSelector-ProductDetails;VariantSelector;;VariantSelectorSlot;true
+;;AddToCart-ProductDetails;AddToCart;;AddToCartSlot;true
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='SearchResultsListPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-SearchResultsList;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-SearchResultsList;HomepageNavLink;;HomepageNavLinkSlot;true
+;;MiniCart-SearchResultsList;MiniCart;;MiniCartSlot;true
+;;NavigationBar-SearchResultsList;NavigationBar;;NavigationBarSlot;true
+;;Footer-SearchResultsList;Footer;;FooterSlot;true
+;;HeaderLinks-SearchResultsList;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-SearchResultsList;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-SearchResultsList;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-SearchResultsList;BottomHeaderSlot;;BottomHeaderSlot;true
+;;SearchResultsListSlot-SearchResultsList;SearchResultsListSlot;;SearchResultsListSlot;true
+;;PlaceholderContentSlot-SearchResultsList;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='SearchResultsGridPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-SearchResultsGrid;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-SearchResultsGrid;HomepageNavLink;;HomepageNavLinkSlot;true
+;;MiniCart-SearchResultsGrid;MiniCart;;MiniCartSlot;true
+;;NavigationBar-SearchResultsGrid;NavigationBar;;NavigationBarSlot;true
+;;Footer-SearchResultsGrid;Footer;;FooterSlot;true
+;;HeaderLinks-SearchResultsGrid;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-SearchResultsGrid;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-SearchResultsGrid;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-SearchResultsGrid;BottomHeaderSlot;;BottomHeaderSlot;true
+;;SearchResultsGridSlot-SearchResultsGrid;SearchResultsGridSlot;;SearchResultsGridSlot;true
+;;PlaceholderContentSlot-SearchResultsGrid;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='SearchResultsEmptyPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-SearchResultsEmpty;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-SearchResultsEmpty;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-SearchResultsEmpty;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-SearchResultsEmpty;MiniCart;;MiniCartSlot;true
+;;Footer-SearchResultsEmpty;Footer;;FooterSlot;true
+;;HeaderLinks-SearchResultsEmpty;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-SearchResultsEmpty;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-SearchResultsEmpty;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-SearchResultsEmpty;BottomHeaderSlot;;BottomHeaderSlot;true
+;;PlaceholderContentSlot-SearchResultsEmpty;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
 # Site-wide Homepage
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
@@ -25,12 +199,9 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 
 ### Customer Login
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-;;LeftContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
-;;RightContentSlot-login;Right Content Slot for Customer Register;true;NewCustomerLoginComponent;;;
+;;LeftContentSlot-login;Left Content Slot for Customer Login;true;;;;
+;;RightContentSlot-login;Right Content Slot for Customer Register;true;;;;
 
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true];;;
-;;LeftContentSlot-login;LeftContentSlot;LoginPage;LeftContentSlot-login;;;
-;;RightContentSlot-login;RightContentSlot;RegisterPage;RightContentSlot-login;;;
 
 # Product Details Page
 INSERT_UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']

@@ -35,14 +35,14 @@ UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.Conf
 
 # Create the solr server configuration
 INSERT_UPDATE SolrServerConfig;name[unique=true];mode(code)
-;$adighasSolrServerConfig;$config-solr.conf.mode;
+;$serverConfigName;standalone;
 
 INSERT_UPDATE SolrEndpointUrl;solrServerConfig(name)[unique=true];url[unique=true];master[unique=true,default=false]
-;$serverConfigName;$config-solr.conf.masterUrl;true
+;$serverConfigName;http://localhost:8483/solr;true
 
 # Create the solr indexer configuration
 INSERT_UPDATE SolrIndexConfig;name[unique=true];batchSize;numberOfThreads;indexMode(code);
-;$indexConfigName;100;1;$config-solr.conf.indexMode;
+;$indexConfigName;100;1;TWO_PHASE;
 
 # Create the faceted search configuration
 INSERT_UPDATE SolrSearchConfig;description[unique=true];pageSize
