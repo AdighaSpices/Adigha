@@ -15,6 +15,7 @@
 		</enumtype>
 	</enumtypes>
 
+	<!-- For Relations typecode should start from 40000 -->
 	<relations>
 		<relation localized="false" code="AdProduct2AdRecipe"
 			generate="true" autocreate="true">
@@ -178,6 +179,22 @@
 			</itemtype>
 			<itemtype code="AdighasRotatingImagesComponent" autocreate="true"
 				generate="true" extends="RotatingImagesComponent" />
+		</typegroup>
+
+		<typegroup name="Cronjobs">
+			<itemtype code="AdighaImportJob" extends="CronJob">
+				<deployment table="AdighaImportJob" typecode="30503" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="downloadDir">
+						<persistence type="property">
+							<!-- <columntype database="oracle"> <value>varchar2(2000)</value> 
+								</columntype> -->
+						</persistence>
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
 		</typegroup>
 	</itemtypes>
 </items>
