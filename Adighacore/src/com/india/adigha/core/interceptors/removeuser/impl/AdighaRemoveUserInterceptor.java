@@ -39,7 +39,7 @@ public class AdighaRemoveUserInterceptor implements RemoveInterceptor<UserModel>
 		deletedUserEntry.setDisplayName(user.getDisplayName());
 		deletedUserEntry.setName(user.getName());
 		deletedUserEntry.setUid(user.getUid());
-		context.registerElementFor(deletedUserEntry, PersistenceOperation.SAVE);
+		context.registerElementFor(deletedUserEntry, PersistenceOperation.SAVE); //PersistenceOperation.SAVE will save AdighaDeletedUserEntryModel
 		LOG.info(":::::::: AdighaRemoveUserInterceptor Ends :::::::::");
 
 	}
