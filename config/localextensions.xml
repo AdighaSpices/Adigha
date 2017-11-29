@@ -26,15 +26,17 @@
 		<extension name="backoffice" />
 		<extension name='basecommercebackoffice' />
 		<!-- <extension name='b2bcommercebackoffice' /> -->
-		<extension name='commercesearchbackoffice' />
 		<extension name='commerceservicesbackoffice' />
+				<!-- Solr Backoffice -->
 		<extension name='solrfacetsearchbackoffice' />
-
+		<extension name='commercesearchbackoffice' />
+			<!-- OrderManagement - Backoffice -->
+		<extension name='customersupportbackoffice' />
+		<extension name='warehousingbackoffice' />
 
 		<!-- B2C Store Extensions -->
 		<!-- ext-commerce -->
 		<extension name='commercesearch' />
-		<extension name='commercesearchbackoffice' />
 		<extension name='commercesearchhmc' />
 		<extension name='commerceservices' />
 		<extension name='basecommerce' />
@@ -58,7 +60,15 @@
 		<extension name='yacceleratorstorefront' />
 		<extension name='yacceleratortest' />
 
+		<!-- Import Cockpit -->
 		<extension name='importcockpit' />
+		
+		<!-- InStore Cockpit -->
+		<extension name='instore' />
+		<!-- <extension name='instoresampledata' />
+		<extension name='yinstoreinitialdata' /> -->
+		
+
 
 	</extensions>
 </hybrisconfig>
