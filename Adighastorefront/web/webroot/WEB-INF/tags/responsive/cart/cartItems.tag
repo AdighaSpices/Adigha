@@ -230,7 +230,7 @@
                         <c:choose>
                             <c:when test="${not entry.product.multidimensional}" >
                                 <button class="btn js-remove-entry-button" id="removeEntry_${loop.index}">
-                                    <span class="glyphicon glyphicon-remove"></span>
+                                   REMOVE <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </c:when>
                             <c:otherwise>

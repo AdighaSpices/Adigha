@@ -24,7 +24,6 @@ import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
 import de.hybris.platform.util.Config;
-import com.india.adigha.storefront.controllers.ControllerConstants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,6 +46,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.india.adigha.storefront.controllers.ControllerConstants;
 
 
 /**
@@ -72,7 +73,7 @@ public class AddToCartController extends AbstractController
 	@Resource(name = "groupCartModificationListPopulator")
 	private GroupCartModificationListPopulator groupCartModificationListPopulator;
 
-	@RequestMapping(value = "/cart/add", method = RequestMethod.POST, produces = "application/json")
+	@RequestMapping(value = "/cart/add", method = RequestMethod.POST)
 	public String addToCart(@RequestParam("productCodePost") final String code, final Model model, @Valid final AddToCartForm form,
 			final BindingResult bindingErrors)
 	{
@@ -117,7 +118,7 @@ public class AddToCartController extends AbstractController
 
 		model.addAttribute("product", productFacade.getProductForCodeAndOptions(code, Arrays.asList(ProductOption.BASIC)));
 
-		return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
+		return REDIRECT_PREFIX + "/cart";
 	}
 
 	protected String getViewWithBindingErrorMessages(final Model model, final BindingResult bindingErrors)
@@ -133,7 +134,7 @@ public class AddToCartController extends AbstractController
 				model.addAttribute(ERROR_MSG_TYPE, error.getDefaultMessage());
 			}
 		}
-		return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
+		return REDIRECT_PREFIX + "/cart";
 	}
 
 	protected boolean isTypeMismatchError(final ObjectError error)
@@ -183,7 +184,7 @@ public class AddToCartController extends AbstractController
 		model.addAttribute("numberShowing", Integer.valueOf(Config.getInt(SHOWN_PRODUCT_COUNT, 3)));
 
 
-		return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
+		return REDIRECT_PREFIX + "/cart";
 	}
 
 	@RequestMapping(value = "/cart/addQuickOrder", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -226,7 +227,7 @@ public class AddToCartController extends AbstractController
 			model.addAttribute("modifications", modificationDataList);
 		}
 
-		return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
+		return REDIRECT_PREFIX + "/cart";
 	}
 
 	protected ProductWrapperData createProductWrapperData(final String sku, final String errorMsg)

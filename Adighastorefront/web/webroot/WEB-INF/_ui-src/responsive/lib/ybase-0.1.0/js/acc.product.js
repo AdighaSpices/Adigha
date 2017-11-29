@@ -11,12 +11,12 @@
  */
 ACC.product = {
 
-    _autoload: [
+   /* _autoload: [
         "bindToAddToCartForm",
         "enableStorePickupButton",
         "enableVariantSelectors",
         "bindFacets"
-    ],
+    ],*/
 
 
     bindFacets: function () {
@@ -41,6 +41,7 @@ ACC.product = {
             });
         });
         enquire.register("screen and (min-width:" + screenSmMax + ")", function () {
+        	alert('1');
             $("#cboxClose").click();
         });
     },

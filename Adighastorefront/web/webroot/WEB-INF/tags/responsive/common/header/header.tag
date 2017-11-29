@@ -27,7 +27,7 @@
 							|
 						</span>
 						<span class="myAccount"><a href="#">My Account</a></span>
-						<a href="#">Logout</a>
+						<a href="/adighasstorefront/logout">Logout</a>
 					</c:when>
 					<c:otherwise>
 						<cms:pageSlot position="Login" var="feature" element="div"
@@ -45,7 +45,7 @@
 
 			<p>Subtotal: $ 00.00</p>
 			<p>
-				<span class="vChart"><a href="shoppingcart.html">View
+				<span class="vChart"><a href="/adighasstorefront/cart">View
 						Cart</a></span> <span class="cOut"><a href="checkout.html">Checkout</a></span>
 			</p>
 		</div>

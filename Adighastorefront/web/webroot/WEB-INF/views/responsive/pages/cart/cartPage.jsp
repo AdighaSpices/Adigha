@@ -5,10 +5,8 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="cart" tagdir="/WEB-INF/tags/responsive/cart" %>
 <%@ taglib prefix="common" tagdir="/WEB-INF/tags/responsive/common" %>
-	
 <template:page pageTitle="${pageTitle}">
-
-	<cart:cartValidation/>
+<%-- 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
 	<div class="cart-top-bar">
@@ -23,28 +21,38 @@
                 </div>
             </div>
 		</div>
-	</div>
+	</div> --%>
 
 	<div>
 		<div>
+			<h2 style="color: blue; "> Cart Items Table Start</h2>
             <cms:pageSlot position="TopContent" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
             </cms:pageSlot>
+            <h2 style="color: blue;">Cart Items Table End</h2>
 		</div>
-
+		
+		
 	   <c:if test="${not empty cartData.entries}">
+	   <h2 style="color: blue; "> CenterLeftContentSlot Start</h2>
            <cms:pageSlot position="CenterLeftContentSlot" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
            </cms:pageSlot>
+           <h2 style="color: blue; "> CenterLeftContentSlot End</h2>
         </c:if>
 		
+		
 		 <c:if test="${not empty cartData.entries}">
+		 <h2 style="color: blue; "> Promotion and CartTotals Start</h2>
             <cms:pageSlot position="CenterRightContentSlot" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
             </cms:pageSlot>
+            <h2 style="color: blue; "> Promotion and CartTotals Start</h2>
+             <h2 style="color: blue; "> Checkout Start</h2>
             <cms:pageSlot position="BottomContentSlot" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
             </cms:pageSlot>
+             <h2 style="color: blue; "> Checkout Ends</h2>
 		</c:if>
 				
 		<c:if test="${empty cartData.entries}">

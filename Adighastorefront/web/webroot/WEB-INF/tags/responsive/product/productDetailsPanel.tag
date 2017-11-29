@@ -44,8 +44,8 @@ color: #3E1C10; font-weight: 900; font-size: 20px; line-height: 50px;
 			</cms:pageSlot>
 		</td>
 		<td>
-			<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
-				<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
+			<cms:pageSlot position="AddToCart" var="component" element="div">
+				<cms:component component="${component}" element="div"/>
 			</cms:pageSlot>
 		</td>
 	</tr>

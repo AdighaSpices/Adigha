@@ -55,6 +55,24 @@ INSERT_UPDATE ProductAddToCartComponent;$contentCV[unique=true];uid[unique=true]
 INSERT_UPDATE AddToCartAction;$contentCV[unique=true];uid[unique=true];url;name;restrictions(uid,$contentCV);&actionRef
 ;;AddToCartAction;/cart/add;Product Add To Cart Action;;AddToCartAction
 
+##CartPage related Components
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+;;CartComponent;Cart Display Component;cartDisplay.jsp;;CartComponent
+;;PotentialPromotionsComponent;Potential Promotions Component;potentialPromotionsDisplay.jsp;;PotentialPromotionsComponent
+;;PromotionsComponent;Promotions Component;cartPromotionsDisplay.jsp;;PromotionsComponent
+;;CartTotalsComponent;Cart Totals Display Component;cartTotalsDisplay.jsp;;CartTotalsComponent
+;;CheckoutComponent;Checkout Display Component;checkoutDisplay.jsp;;CheckoutComponent
+
+INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+;;NextDayDeliveryBanner120;Next Day Delivery Banner (120);NextDayDeliveryBanner120;#
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+;;EmptyCartParagraphComponent;Empty Cart Paragraph Component;EmptyCartParagraphComponent
+
+# CMS CartSuggestion Components
+INSERT_UPDATE CartSuggestionComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;filterPurchased;&componentRef
+;;CartSuggestions;Cart Suggestions;ACCESSORIES,SIMILAR;20;true;CartSuggestions
+
 
 ## Navigation Componet Starts ##
 INSERT_UPDATE CMSLinkComponent; $contentCV[unique=true]; uid[unique=true]; name; url; linkName[lang=en];restrictions(uid,$contentCV);target(code)[default='sameWindow'];styleAttributes;onlyOneRestrictionMustApply[default=false]
@@ -102,16 +120,6 @@ INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[uniqu
 
 #### All Components Ends ##########
 
-### Customer Login
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-;;LeftContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
-;;RightContentSlot-login;Right Content Slot for Customer Register;true;NewCustomerLoginComponent;;;
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true];;;
-;;LeftContentSlot-login;LeftContentSlot;LoginPage;LeftContentSlot-login;;;
-;;RightContentSlot-login;RightContentSlot;RegisterPage;RightContentSlot-login;;;
-
-
 ### All ContentSlot goes here ##########
 #Login and Register links shd be in homepage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
@@ -127,6 +135,23 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 ;;LoginContentSlot;Login Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
 ;;RegisterContentSlot;Register Content Slot for Customer Register;true;NewCustomerLoginComponent;;;
 ;;Section3Slot-Homepage;Section3 Slot for Homepage;true;AdighasHomepageProductCarouselComponent
+
+### Customer Login
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+;;LeftContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
+;;RightContentSlot-login;Right Content Slot for Customer Register;true;NewCustomerLoginComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true];;;
+;;LeftContentSlot-login;LeftContentSlot;LoginPage;LeftContentSlot-login;;;
+;;RightContentSlot-login;RightContentSlot;RegisterPage;RightContentSlot-login;;;
+
+### cartPage
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;TopContent-cartPage;Top Slot for Cart Page;true;NextDayDeliveryBanner120,CartComponent
+;;EmptyCartMiddleContent-cartPage;Empty Cart Middle Slot for Cart Page;true;EmptyCartParagraphComponent
+;;CenterLeftContentSlot-cartPage;Center Left Content Slot for Cart Page;true;PromotionsComponent,PotentialPromotionsComponent
+;;CenterRightContentSlot-cartPage;Center Right Content Slot for Cart Page;true;CartTotalsComponent
+;;BottomContentSlot-cartPage;Bottom Content Slot for Cart Page;true;CheckoutComponent,CartSuggestions
 
 
 #### All ContentSlot Ends ##########
@@ -149,6 +174,13 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;VariantSelector-ProductDetails;VariantSelector;;VariantSelectorSlot;true
 ;;AddToCart-ProductDetails;AddToCart;;AddToCartSlot;true
 
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CartPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-CartPage;SiteLogo;;SiteLogoSlot;true
+;;Login-CartPage;Login;;LoginSlot-Homepage;true;
+;;Register-CartPage;Register;;RegisterSlot-Homepage;true;
+;;NavigationBar-CartPage;NavigationBar;;NavigationBarSlot;true
+;;Main-CartPage;Main;;MainSlot-Homepage;true;
+
 #### All ContentSlotForTemplate Ends ##########
 
 
@@ -158,6 +190,17 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 ;;LoginContentSlot;LeftContentSlot;LoginPage;LoginContentSlot;;;
 ;;RegisterContentSlot;RightContentSlot;RegisterPage;RegisterContentSlot;;;
 ;;Section3-Homepage;Section3;adighashomepage;Section3Slot-Homepage
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true];;;
+;;LeftContentSlot-login;LeftContentSlot;LoginPage;LeftContentSlot-login;;;
+;;RightContentSlot-login;RightContentSlot;RegisterPage;RightContentSlot-login;;;
+
+INSERT_UPDATE ContentSlotForPage ;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='cartPage'];contentSlot(uid,$contentCV)[unique=true]
+;;TopContentSlotForCartPage;TopContent;;TopContent-cartPage
+;;EmptyCartMiddleForCartPage;EmptyCartMiddleContent;;EmptyCartMiddleContent-cartPage
+;;CenterLeftContentSlotForCartPage;CenterLeftContentSlot;;CenterLeftContentSlot-cartPage
+;;CenterRightContentSlotForCartPage;CenterRightContentSlot;;CenterRightContentSlot-cartPage
+;;BottomContentSlotForCartPage;BottomContentSlot;;BottomContentSlot-cartPage
 
 #### All ContentSlotForPage Ends ##########
 
