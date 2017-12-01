@@ -120,6 +120,8 @@ INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[uniqu
 
 #### All Components Ends ##########
 
+
+
 ### All ContentSlot goes here ##########
 #Login and Register links shd be in homepage
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
@@ -153,6 +155,9 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 ;;CenterRightContentSlot-cartPage;Center Right Content Slot for Cart Page;true;CartTotalsComponent
 ;;BottomContentSlot-cartPage;Bottom Content Slot for Cart Page;true;CheckoutComponent,CartSuggestions
 
+###### Adighas Checkout Summary / Proceed to Checkout Page ######
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;SideContent-multiStepCheckoutSummaryPage;Side Slot for multiStepCheckoutSummaryPage;true;
 
 #### All ContentSlot Ends ##########
 
@@ -201,6 +206,10 @@ INSERT_UPDATE ContentSlotForPage ;$contentCV[unique=true];uid[unique=true];posit
 ;;CenterLeftContentSlotForCartPage;CenterLeftContentSlot;;CenterLeftContentSlot-cartPage
 ;;CenterRightContentSlotForCartPage;CenterRightContentSlot;;CenterRightContentSlot-cartPage
 ;;BottomContentSlotForCartPage;BottomContentSlot;;BottomContentSlot-cartPage
+
+###### Adighas Checkout Summary / Proceed to Checkout Page ######
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
+;;Side-multiStepCheckoutSummaryPage;SideContent;multiStepCheckoutSummaryPage;SideContent-multiStepCheckoutSummaryPage
 
 #### All ContentSlotForPage Ends ##########
 

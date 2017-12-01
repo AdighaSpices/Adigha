@@ -17,9 +17,11 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 ;;SearchResultsGridPageTemplate;Search Results Grid Page Template;search/searchGridPage;ContentPage
 ;;SearchResultsEmptyPageTemplate;Search Results Empty Page Template;search/searchEmptyPage;ContentPage
 ;;CartPageTemplate;Cart Page Template;;ContentPage;false;
+;;MultiStepCheckoutSummaryPageTemplate;Multi Step Checkout Summary Page Template;;ContentPage;false;
 
 UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
 ;;CartPageTemplate;$jarResourceCms/structure-view/structure_cartPageTemplate.vm
+;;MultiStepCheckoutSummaryPageTemplate;$jarResourceCms/structure-view/structure_multiStepCheckoutSummaryPageTemplate.vm
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];validComponentTypes(code);compTypeGroup(code)
 ;SiteLogo;;;logo
@@ -41,35 +43,6 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;BottomHeaderSlot;;;wide
 ;PlaceholderContentSlot;;;
 ;Main;;;
-
-# Create Content Slots
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
-;;SiteLogoSlot;Default Site Logo Slot;true
-;;HomepageNavLinkSlot;Default Homepage Link;true
-;;MiniCartSlot;Mini Cart;true
-;;NavigationBarSlot;Navigation Bar;true
-;;TopContentSlot;Top Content;true
-;;MiddleContentSlot;Middle Content;true
-;;BottomContentSlot;Bottom Content;true
-;;SideContentSlot;Side Content;true
-;;FooterSlot;Footer;true
-;;HeaderLinksSlot;Header links;true
-;;SearchBoxSlot;Search Box;true
-;;VariantSelectorSlot;Variant Selector;true
-;;AddToCartSlot;Add To Cart;true
-;;TopHeaderSlot;Top Header;true
-;;BottomHeaderSlot;Bottom Header;true
-;;ProductListSlot;Product List;true
-;;ProductGridSlot;Product Grid;true
-;;SearchResultsListSlot;Search Result List;true
-;;SearchResultsGridSlot;Search Result Grid;true
-;;LeftContentSlot;Left Content Slot;true
-;;RightContentSlot;Right Content Slot;true
-;;CenterContentSlot;Center Content Slot;true
-;;CenterLeftContentSlot;Center Left Content Slot;true
-;;CenterRightContentSlot;Center Right Content Slot;true
-;;EmptyCartMiddleContent;Empty Cart Middle Content;true
-;;PlaceholderContentSlot;Placeholder for Addon tag files;true
 
 # Product Details Page Template
 # The CrossSelling and UpSelling slots are designed for related products, cross-sells and up-sells.
@@ -141,6 +114,55 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;BottomHeaderSlot;;;wide
 ;PlaceholderContentSlot;;;
 
+# Multi Step Checkout Summary Page Templates
+INSERT_UPDATE ContentSlotName; name[unique=true];template(uid,$contentCV)[unique=true][default='MultiStepCheckoutSummaryPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;SideContent;;;narrow
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+
+
+# Create Content Slots
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
+;;SiteLogoSlot;Default Site Logo Slot;true
+;;HomepageNavLinkSlot;Default Homepage Link;true
+;;MiniCartSlot;Mini Cart;true
+;;NavigationBarSlot;Navigation Bar;true
+;;TopContentSlot;Top Content;true
+;;MiddleContentSlot;Middle Content;true
+;;BottomContentSlot;Bottom Content;true
+;;SideContentSlot;Side Content;true
+;;FooterSlot;Footer;true
+;;HeaderLinksSlot;Header links;true
+;;SearchBoxSlot;Search Box;true
+;;VariantSelectorSlot;Variant Selector;true
+;;AddToCartSlot;Add To Cart;true
+;;TopHeaderSlot;Top Header;true
+;;BottomHeaderSlot;Bottom Header;true
+;;ProductListSlot;Product List;true
+;;ProductGridSlot;Product Grid;true
+;;SearchResultsListSlot;Search Result List;true
+;;SearchResultsGridSlot;Search Result Grid;true
+;;LeftContentSlot;Left Content Slot;true
+;;RightContentSlot;Right Content Slot;true
+;;CenterContentSlot;Center Content Slot;true
+;;CenterLeftContentSlot;Center Left Content Slot;true
+;;CenterRightContentSlot;Center Right Content Slot;true
+;;EmptyCartMiddleContent;Empty Cart Middle Content;true
+;;PlaceholderContentSlot;Placeholder for Addon tag files;true
+
+
+### Customer Login
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+;;LeftContentSlot-login;Left Content Slot for Customer Login;true;;;;
+;;RightContentSlot-login;Right Content Slot for Customer Register;true;;;;
+
 
 INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-HomePage;SiteLogo;;SiteLogoSlot;true
@@ -192,6 +214,20 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;BottomHeaderSlot-SearchResultsEmpty;BottomHeaderSlot;;BottomHeaderSlot;true
 ;;PlaceholderContentSlot-SearchResultsEmpty;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
+# Bind Content Slots to Multi Step Checkout Summary Page Templates
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='MultiStepCheckoutSummaryPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-MultiStepCheckoutSummaryPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-MultiStepCheckoutSummaryPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-MultiStepCheckoutSummaryPage;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-MultiStepCheckoutSummaryPage;MiniCart;;MiniCartSlot;true
+;;Footer-MultiStepCheckoutSummaryPage;Footer;;FooterSlot;true
+;;HeaderLinks-MultiStepCheckoutSummaryPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-MultiStepCheckoutSummaryPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-MultiStepCheckoutSummaryPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-MultiStepCheckoutSummaryPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;PlaceholderContentSlot-MultiStepCheckoutSummaryPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+
 # Site-wide Homepage
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
 ;;adighashomepage;Adighas Homepage;AdighasHomePageTemplate;Adighas;true;;true;
@@ -199,12 +235,7 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 ;;RegisterPage;Register Page;AdighasHomePageTemplate;register;false;;false;
 ;;MainPage;Center Page;AdighasHomePageTemplate;main;false;;false;
 ;;cartPage;Cart Page;CartPageTemplate;cart;false;;false;
-
-
-### Customer Login
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-;;LeftContentSlot-login;Left Content Slot for Customer Login;true;;;;
-;;RightContentSlot-login;Right Content Slot for Customer Register;true;;;;
+;;multiStepCheckoutSummaryPage;Multi Checkout Summary Page;MultiStepCheckoutSummaryPageTemplate;multiStepCheckoutSummary
 
 
 # Product Details Page
