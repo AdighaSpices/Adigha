@@ -56,12 +56,11 @@ ACC.autocomplete = {
 
 					var renderHtml = "<a href='" + item.url + "' >";
 
-					if (item.image != null){
-						renderHtml += "<div class='thumb'><img src='" + item.image + "'  /></div>";
-					}
+//					if (item.image != null){
+//						renderHtml += "<div class='thumb'><img src='" + item.image + "'  /></div>";
+//					}
 
 					renderHtml += 	"<div class='name'>" + item.value +"</div>";
-					renderHtml += 	"<div class='price'>" + item.price +"</div>";
 					renderHtml += 	"</a>";
 
 					return $("<li>").data("item.autocomplete", item).append(renderHtml).appendTo(ul);

@@ -25,6 +25,20 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique=true]; @media[translato
 ;300Wx300H;/300Wx300H/TangdiKabab.jpg;$siteResource/images/300Wx300H/TangdiKabab.jpg;;;images
 ;300Wx300H;/300Wx300H/VegBiryani.jpg;$siteResource/images/300Wx300H/VegBiryani.jpg;;;images
 ;300Wx300H;/300Wx300H/VegFriedRice.jpg;$siteResource/images/300Wx300H/VegFriedRice.jpg;;;images
+;96Wx96H;/96Wx96H/ButterChickenGreen.jpg;$siteResource/images/96Wx96H/ButterChickenGreen.jpg;;;images
+;96Wx96H;/96Wx96H/ButterChickenRed.jpg;$siteResource/images/96Wx96H/ButterChickenRed.jpg;;;images
+;96Wx96H;/96Wx96H/ChickenBiryani.jpg;$siteResource/images/96Wx96H/ChickenBiryani.jpg;;;images
+;96Wx96H;/96Wx96H/ChickenFriedRice.jpg;$siteResource/images/96Wx96H/ChickenFriedRice.jpg;;;images
+;96Wx96H;/96Wx96H/ChickenManchuria.jpg;$siteResource/images/96Wx96H/ChickenManchuria.jpg;;;images
+;96Wx96H;/96Wx96H/CrispyCorn.jpg;$siteResource/images/96Wx96H/CrispyCorn.jpg;;;images
+;96Wx96H;/96Wx96H/FingerChips.jpg;$siteResource/images/96Wx96H/FingerChips.jpg;;;images
+;96Wx96H;/96Wx96H/FishTikka.jpg;$siteResource/images/96Wx96H/FishTikka.jpg;;;images
+;96Wx96H;/96Wx96H/KadaiPaneerGreen.jpg;$siteResource/images/96Wx96H/KadaiPaneerGreen.jpg;;;images
+;96Wx96H;/96Wx96H/KadaiPaneerRed.jpg;$siteResource/images/96Wx96H/KadaiPaneerRed.jpg;;;images
+;96Wx96H;/96Wx96H/PaneerTikka.jpg;$siteResource/images/96Wx96H/PaneerTikka.jpg;;;images
+;96Wx96H;/96Wx96H/TangdiKabab.jpg;$siteResource/images/96Wx96H/TangdiKabab.jpg;;;images
+;96Wx96H;/96Wx96H/VegBiryani.jpg;$siteResource/images/96Wx96H/VegBiryani.jpg;;;images
+;96Wx96H;/96Wx96H/VegFriedRice.jpg;$siteResource/images/96Wx96H/VegFriedRice.jpg;;;images
 ;1200Wx1200H;/1200Wx1200H/ButterChickenGreen.jpg;$siteResource/images/1200Wx1200H/ButterChickenGreen.jpg;;;images
 ;1200Wx1200H;/1200Wx1200H/ButterChickenRed.jpg;$siteResource/images/1200Wx1200H/ButterChickenRed.jpg;;;images
 ;1200Wx1200H;/1200Wx1200H/ChickenBiryani.jpg;$siteResource/images/1200Wx1200H/ChickenBiryani.jpg;;;images
@@ -39,7 +53,6 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique=true]; @media[translato
 ;1200Wx1200H;/1200Wx1200H/TangdiKabab.jpg;$siteResource/images/1200Wx1200H/TangdiKabab.jpg;;;images
 ;1200Wx1200H;/1200Wx1200H/VegBiryani.jpg;$siteResource/images/1200Wx1200H/VegBiryani.jpg;;;images
 ;1200Wx1200H;/1200Wx1200H/VegFriedRice.jpg;$siteResource/images/1200Wx1200H/VegFriedRice.jpg;;;images
-
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 ;300Wx300HButterChickenGreen;/300Wx300H/ButterChickenGreen.jpg;;
@@ -57,6 +70,21 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 ;300Wx300HTangdiKabab;/300Wx300H/TangdiKabab.jpg;;
 ;300Wx300HVegBiryani;/300Wx300H/VegBiryani.jpg;;
 ;300Wx300HVegFriedRice;/300Wx300H/VegFriedRice.jpg;;
+;96Wx96HButterChickenGreen;/96Wx96H/ButterChickenGreen.jpg;;
+;96Wx96HButterChickenRed;/96Wx96H/ButterChickenRed.jpg;;
+;96Wx96HChickenBiryani;/96Wx96H/ChickenBiryani.jpg;;
+;96Wx96HChickenFriedRice;/96Wx96H/ChickenFriedRice.jpg;;
+;96Wx96HChickenManchuria;/96Wx96H/ChickenManchuria.jpg;;
+;96Wx96HCrispyCorn;/96Wx96H/CrispyCorn.jpg;;
+;96Wx96HFingerChips;/96Wx96H/FingerChips.jpg;;
+;96Wx96HFishTikka;/96Wx96H/FishTikka.jpg;;
+;96Wx96HKadaiPaneerGreen;/96Wx96H/KadaiPaneerGreen.jpg;;
+;96Wx96HKadaiPaneerRed;/96Wx96H/KadaiPaneerRed.jpg;;
+;96Wx96HKadaiPaneerRed;/96Wx96H/KadaiPaneerRed.jpg;;
+;96Wx96HPaneerTikka;/96Wx96H/PaneerTikka.jpg;;
+;96Wx96HTangdiKabab;/96Wx96H/TangdiKabab.jpg;;
+;96Wx96HVegBiryani;/96Wx96H/VegBiryani.jpg;;
+;96Wx96HVegFriedRice;/96Wx96H/VegFriedRice.jpg;;
 ;1200Wx1200HButterChickenGreen;/1200Wx1200H/ButterChickenGreen.jpg;;
 ;1200Wx1200HButterChickenRed;/1200Wx1200H/ButterChickenRed.jpg;;
 ;1200Wx1200HChickenBiryani;/1200Wx1200H/ChickenBiryani.jpg;;
@@ -76,19 +104,19 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 
 ## Insert Product and Media Mapping
 UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
-;P015;/300Wx300H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;300Wx300HFingerChips;;
-;P018;/300Wx300H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;300Wx300HCrispyCorn;;
-;P021;/300Wx300H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;300Wx300HPaneerTikka;;
-;P030;/300Wx300H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;300Wx300HFishTikka;;
-;P033;/300Wx300H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;300Wx300HTangdiKabab;;
-;P036;/300Wx300H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;300Wx300HChickenManchuria;;
-;P057-Green;/300Wx300H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;300Wx300HKadaiPaneerGreen;;
-;P057-Red;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;300Wx300HKadaiPaneerRed;;
-;P057;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;300Wx300HKadaiPaneerRed;;
-;P074;/300Wx300H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;300Wx300HVegFriedRice;;
-;P096;/300Wx300H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;300Wx300HVegBiryani;;
-;P039-Red;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;300Wx300HButterChickenRed;;
-;P039-Green;/300Wx300H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;300Wx300HButterChickenGreen;;
-;P039;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;300Wx300HButterChickenRed;;
-;P076;/300Wx300H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;300Wx300HChickenFriedRice;;
-;P088;/300Wx300H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;300Wx300HChickenBiryani;;
+;P015;/300Wx300H/FingerChips.jpg;/96Wx96H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;/300Wx300H/FingerChips.jpg;/96Wx96H/FingerChips.jpg;300Wx300HFingerChips,96Wx96HFingerChips;;
+;P018;/300Wx300H/CrispyCorn.jpg;/96Wx96H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;/300Wx300H/CrispyCorn.jpg;/96Wx96H/CrispyCorn.jpg;300Wx300HCrispyCorn,96Wx96HCrispyCorn;;
+;P021;/300Wx300H/PaneerTikka.jpg;/96Wx96H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;/300Wx300H/PaneerTikka.jpg;/96Wx96H/PaneerTikka.jpg;300Wx300HPaneerTikka,96Wx96HPaneerTikka;;
+;P030;/300Wx300H/FishTikka.jpg;/96Wx96H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;/300Wx300H/FishTikka.jpg;/96Wx96H/FishTikka.jpg;300Wx300HFishTikka,96Wx96HFishTikka;;
+;P033;/300Wx300H/TangdiKabab.jpg;/96Wx96H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;/300Wx300H/TangdiKabab.jpg;/96Wx96H/TangdiKabab.jpg;300Wx300HTangdiKabab,96Wx96HTangdiKabab;;
+;P036;/300Wx300H/ChickenManchuria.jpg;/96Wx96H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;/300Wx300H/ChickenManchuria.jpg;/96Wx96H/ChickenManchuria.jpg;300Wx300HChickenManchuria,96Wx96HChickenManchuria;;
+;P057-Green;/300Wx300H/KadaiPaneerGreen.jpg;/96Wx96H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;/300Wx300H/KadaiPaneerGreen.jpg;/96Wx96H/KadaiPaneerGreen.jpg;300Wx300HKadaiPaneerGreen,96Wx96HKadaiPaneerGreen;;
+;P057-Red;/300Wx300H/KadaiPaneerRed.jpg;/96Wx96H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/96Wx96H/KadaiPaneerRed.jpg;300Wx300HKadaiPaneerRed,96Wx96HKadaiPaneerRed;;
+;P057;/300Wx300H/KadaiPaneerRed.jpg;/96Wx96H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/300Wx300H/KadaiPaneerRed.jpg;/96Wx96H/KadaiPaneerRed.jpg;300Wx300HKadaiPaneerRed,96Wx96HKadaiPaneerRed;;
+;P074;/300Wx300H/VegFriedRice.jpg;/96Wx96H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;/300Wx300H/VegFriedRice.jpg;/96Wx96H/VegFriedRice.jpg;300Wx300HVegFriedRice,96Wx96HVegFriedRice;;
+;P096;/300Wx300H/VegBiryani.jpg;/96Wx96H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;/300Wx300H/VegBiryani.jpg;/96Wx96H/VegBiryani.jpg;300Wx300HVegBiryani,96Wx96HVegBiryani;;
+;P039-Red;/300Wx300H/ButterChickenRed.jpg;/96Wx96H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/96Wx96H/ButterChickenRed.jpg;300Wx300HButterChickenRed,96Wx96HButterChickenRed;;
+;P039-Green;/300Wx300H/ButterChickenGreen.jpg;/96Wx96H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;/300Wx300H/ButterChickenGreen.jpg;/96Wx96H/ButterChickenGreen.jpg;300Wx300HButterChickenGreen,96Wx96HButterChickenGreen;;
+;P039;/300Wx300H/ButterChickenRed.jpg;/96Wx96H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/300Wx300H/ButterChickenRed.jpg;/96Wx96H/ButterChickenRed.jpg;300Wx300HButterChickenRed,96Wx96HButterChickenRed;;
+;P076;/300Wx300H/ChickenFriedRice.jpg;/96Wx96H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;/300Wx300H/ChickenFriedRice.jpg;/96Wx96H/ChickenFriedRice.jpg;300Wx300HChickenFriedRice,96Wx96HChickenFriedRice;;
+;P088;/300Wx300H/ChickenBiryani.jpg;/96Wx96H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;/300Wx300H/ChickenBiryani.jpg;/96Wx96H/ChickenBiryani.jpg;300Wx300HChickenBiryani,96Wx96HChickenBiryani;;

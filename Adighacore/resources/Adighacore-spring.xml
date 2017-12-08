@@ -211,34 +211,33 @@
 	<!-- RMAS SOLR Customizations -->
 
 	<bean id="adighasCategorySource" parent="abstractCategorySource">
-		<property name="rootCategory" value="categories" />
+		<property name="rootCategory" value="C1" />
 	</bean>
 	
-	<bean id="adighasCategoryCodeValueProvider" parent="abstractCategoryCodeValueProvider">
-		<property name="categorySource" ref="adighasCategorySource" />
-	</bean>
 	
-	<bean id="adighasCategoryNameValueProvider" parent="abstractCategoryNameValueProvider">
-        <property name="categorySource" ref="adighasCategorySource"/>
-    </bean>
-    
     <!-- Solr field value providers -->
 
-
-	<bean id="abstractCategoryCodeValueProvider" abstract="true"
+	<bean id="adighasAbstractCategoryCodeValueProvider" abstract="true"
 		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryCodeValueProvider"
 		parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
 		<property name="commonI18NService" ref="commonI18NService" />
 	</bean>
-	<bean id="abstractCategoryNameValueProvider" abstract="true"
+	<bean id="adighasAbstractCategoryNameValueProvider" abstract="true"
 		class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryNameValueProvider"
 		parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
 		<property name="commonI18NService" ref="commonI18NService" />
 	</bean>
 
-
+	<bean id="adighasCategoryCodeValueProvider" parent="adighasAbstractCategoryCodeValueProvider">
+		<property name="categorySource" ref="adighasCategorySource" />
+	</bean>
+	
+	<bean id="adighasCategoryNameValueProvider" parent="adighasAbstractCategoryNameValueProvider">
+        <property name="categorySource" ref="adighasCategorySource"/>
+    </bean>
+    
 	<bean id="image515ValueProvider" parent="abstractImageValueProvider">
 		<property name="mediaFormat" value="515Wx515H" />
 	</bean>
@@ -277,6 +276,8 @@
 		<property name="promotionsService" ref="promotionsService" />
 		<property name="fieldNameProvider" ref="solrFieldNameProvider" />
 	</bean>
+	
+	
     
 	<!-- END SOLR field value providers -->
 </beans>

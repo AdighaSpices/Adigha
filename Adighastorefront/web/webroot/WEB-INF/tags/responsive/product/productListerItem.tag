@@ -16,9 +16,9 @@
 <li class="product__list--item">
 	<ycommerce:testId code="test_searchPage_wholeProduct">
 		
-		<a class="product__list--thumb" href="${productUrl}" title="${product.name}">
+		 <a class="product__list--thumb" href="${productUrl}" title="${product.name}">
 			<product:productPrimaryImage product="${product}" format="thumbnail"/>
-		</a>
+		</a> 
 		<ycommerce:testId code="searchPage_productName_link_${product.code}">
 			<a class="product__list--name" href="${productUrl}">${product.name}</a>
 		</ycommerce:testId>

@@ -74,7 +74,25 @@
 					href="#" class="bookMan">More</a>
 			</p>
 		</div>
-		<form action="#" method="get">
+		<div class="search grid_4 omega">
+				<div class="nav__left col-xs-12 col-sm-6">
+					<div class="row">
+						<div class="col-sm-2 hidden-xs visible-sm mobile-menu">
+							<button class="btn js-toggle-sm-navigation" type="button">
+								<span class="glyphicon glyphicon-align-justify"></span>
+							</button>
+						</div>
+						<div class="col-sm-10">
+							<div class="site-search">
+								<cms:pageSlot position="SearchBox" var="component">
+									<cms:component component="${component}" element="div"/>
+								</cms:pageSlot>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		<!-- <form action="#" method="get">
 			<div class="search grid_4 omega">
 
 				<input type="text" value="Type your keyword" id="s" name="s"
@@ -83,6 +101,6 @@
 
 				<input type="button" value="Search" />
 			</div>
-		</form>
+		</form> -->
 	</div>
 </header>

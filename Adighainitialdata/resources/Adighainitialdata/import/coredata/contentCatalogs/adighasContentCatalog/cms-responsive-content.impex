@@ -18,6 +18,7 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 ;;SearchResultsEmptyPageTemplate;Search Results Empty Page Template;search/searchEmptyPage;ContentPage
 ;;CartPageTemplate;Cart Page Template;;ContentPage;false;
 ;;MultiStepCheckoutSummaryPageTemplate;Multi Step Checkout Summary Page Template;;ContentPage;false;
+;;CategoryPageTemplate;Category Page Template;category/categoryPage;CategoryPage
 
 UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
 ;;CartPageTemplate;$jarResourceCms/structure-view/structure_cartPageTemplate.vm
@@ -43,6 +44,23 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;BottomHeaderSlot;;;wide
 ;PlaceholderContentSlot;;;
 ;Main;;;
+
+
+# Category Page Template
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CategoryPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;Section1;;;wide
+;Section2;;;wide
+;Section3;;;narrow
+;Section4;;;narrow
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
 
 # Product Details Page Template
 # The CrossSelling and UpSelling slots are designed for related products, cross-sells and up-sells.
@@ -167,12 +185,14 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AdighasHomePageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-HomePage;SiteLogo;;SiteLogoSlot;true
 ;;NavigationBar-Homepage;NavigationBar;;NavigationBarSlot;true
+;;SearchBox-Homepage;SearchBox;;SearchBoxSlot;true
 
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ProductDetailsPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-PDPage;SiteLogo;;SiteLogoSlot;true
 ;;NavigationBar-PDPage;NavigationBar;;NavigationBarSlot;true
 ;;VariantSelector-ProductDetails;VariantSelector;;VariantSelectorSlot;true
 ;;AddToCart-ProductDetails;AddToCart;;AddToCartSlot;true
+;;SearchBox-ProductDetails;SearchBox;;SearchBoxSlot;true
 
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='SearchResultsListPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-SearchResultsList;SiteLogo;;SiteLogoSlot;true
@@ -214,6 +234,20 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;BottomHeaderSlot-SearchResultsEmpty;BottomHeaderSlot;;BottomHeaderSlot;true
 ;;PlaceholderContentSlot-SearchResultsEmpty;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CategoryPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-CategoryPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-CategoryPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;MiniCart-CategoryPage;MiniCart;;MiniCartSlot;true
+;;NavigationBar-CategoryPage;NavigationBar;;NavigationBarSlot;true
+;;Footer-CategoryPage;Footer;;FooterSlot;true
+;;HeaderLinks-CategoryPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-CategoryPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-CategoryPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-CategoryPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;PlaceholderContentSlot-CategoryPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+
 # Bind Content Slots to Multi Step Checkout Summary Page Templates
 INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='MultiStepCheckoutSummaryPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-MultiStepCheckoutSummaryPage;SiteLogo;;SiteLogoSlot;true
@@ -236,6 +270,8 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 ;;MainPage;Center Page;AdighasHomePageTemplate;main;false;;false;
 ;;cartPage;Cart Page;CartPageTemplate;cart;false;;false;
 ;;multiStepCheckoutSummaryPage;Multi Checkout Summary Page;MultiStepCheckoutSummaryPageTemplate;multiStepCheckoutSummary
+;;search;Search Results Page;SearchResultsListPageTemplate;search
+;;searchEmpty;Search Results Empty Page;SearchResultsEmptyPageTemplate;searchEmpty
 
 
 # Product Details Page
